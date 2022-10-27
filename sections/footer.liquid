@@ -1,5 +1,4 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -15,7 +14,7 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
-{% comment %} {%- style -%}
+{%- style -%}
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
   }
@@ -35,10 +34,9 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-{%- endstyle -%} {% endcomment %}
+{%- endstyle -%}
 
-{% comment %} <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"> {% endcomment %}
-  <footer class="l-footer">
+{% comment %} <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
       {%- if section.blocks.size > 0 -%}
@@ -210,6 +208,19 @@
           <small class="copyright__content">{{ powered_by_link }}</small>
         </div>
       </div>
+    </div>
+  </div>
+</footer> {% endcomment %}
+
+<footer class="l-footer">
+  <div class="l-footer__inner">
+    <div class="l-footer-nav">
+      <ul class="l-footer-nav__list">
+        <li class="l-footer-nav__item">項目１</li>
+        <li class="l-footer-nav__item">項目２</li>
+        <li class="l-footer-nav__item">項目３</li>
+        <li class="l-footer-nav__item">項目４</li>
+        </ul>
     </div>
   </div>
 </footer>
