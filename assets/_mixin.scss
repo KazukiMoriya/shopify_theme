@@ -41,3 +41,9 @@
     @content;
   }
 }
+
+@mixin hover {
+  &:hover{
+    opacity: 0.7;
+  }
+}
