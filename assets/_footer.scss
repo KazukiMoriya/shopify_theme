@@ -1,6 +1,6 @@
 @use "./variable" as *;
 .l-footer{
-  padding: 50px 0;
+  padding: 80px 0;
   border-top: 1px solid $black;
 }
 
@@ -23,11 +23,17 @@
   justify-content: center;
 }
 
-.l-footerーnav{
+.l-footer-nav{
   width: calc(90% - 150px);
 }
 
-.l-footerーnav__list{
+.l-footer-nav__list{
   display: flex;
   flex-wrap: wrap;
+}
+
+.l-footer-nav__item{
+  &:nth-child(n + 2){
+    margin-left: 20px;
+  }
 }
