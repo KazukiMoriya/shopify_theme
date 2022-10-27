@@ -1,0 +1,15 @@
+@use "./variable" as *;
+.l-footer{
+  padding: 50px 0;
+  border-top: 1px solid $black;
+}
+
+.l-footer__inner{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.l-footer__list{
+  display: flex;
+  flex-wrap: wrap;
+}

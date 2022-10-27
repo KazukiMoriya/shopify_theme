@@ -1,0 +1,36 @@
+@use "./variable" as *;
+@use "./mixin" as *;
+body{
+  font-family: 'Noto Sans JP', sans-serif;
+  color: $black;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.is-hidePc{
+  @include pc{
+    display: none;
+  }
+}
+
+.is-hidePcTab{
+  @include pcTab{
+    display: none;
+  }
+}
+
+.is-hideSp{
+  @include sp{
+    display: none;
+  }
+}
+
+.is-hideSpTab{
+  @include spTab{
+    display: none;
+  }
+}

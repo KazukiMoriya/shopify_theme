@@ -1,0 +1,43 @@
+@use "./variable" as *;
+
+@mixin pc{
+  @media screen and (min-width: $pc){
+    @content;
+  }
+}
+
+@mixin sp{
+  @media screen and (max-width: $sp){
+    @content;
+  }
+}
+
+@mixin tab{
+  @media screen and (max-width: $pc) and (min-width: $sp){
+    @content;
+  }
+}
+
+@mixin pcTab{
+  @media screen and (min-width: $sp + 1px){
+    @content;
+  }
+}
+
+@mixin spTab{
+  @media screen and (max-width: $pc - 1px){
+    @content;
+  }
+}
+
+@mixin safari {
+  @at-root _::-webkit-full-page-media, _:future, :root &{
+    @content;
+  }
+}
+
+@mixin firefox {
+  @-moz-document url-prefix(){
+    @content;
+  }
+}
