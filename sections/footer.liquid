@@ -1,6 +1,6 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 
-{% comment %} {{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-payment.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -37,7 +37,8 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+{% comment %} <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding"> {% endcomment %}
+  <footer class="l-footer"></footer>
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
       {%- if section.blocks.size > 0 -%}
@@ -487,18 +488,4 @@
     ]
   }
 }
-{% endschema %} {% endcomment %}
-
-
-<footer class="footer gradient section-{{ section.id }}-padding">
-  <div class="l-footer__inner">
-  <div class="l-footer-nav">
-  <ul class="l-footer-nav__list">
-    <li class="l-footer-nav__item"><a href="">項目１</a></li>
-    <li class="l-footer-nav__item"><a href="">項目２</a></li>
-    <li class="l-footer-nav__item"><a href="">項目３</a></li>
-    <li class="l-footer-nav__item"><a href="">項目４</a></li>
-  </ul>
-  </div>
-  </div>
-</footer>
+{% endschema %}
