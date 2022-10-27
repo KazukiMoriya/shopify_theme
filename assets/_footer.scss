@@ -7,6 +7,24 @@
 .l-footer__inner{
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.l-footer__logoWrap{
+  width: 150px;
+  border: 1px solid $black;
+}
+
+.l-footer__logo{
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-footerーnav{
+  width: calc(90% - 150px);
 }
 
 .l-footerーnav__list{
