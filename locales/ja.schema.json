@@ -738,28 +738,6 @@
       "blocks": {
         "link_list": {
           "settings": {
-            "logo": {
-              "label": "ロゴ画像"
-            },
-            "logo_width": {
-              "unit": "ピクセル",
-              "label": "ロゴの幅をカスタマイズする"
-            },
-            "logo_position": {
-              "label": "デスクトップのロゴ位置",
-              "options__1": {
-                "label": "中央部左側"
-              },
-              "options__2": {
-                "label": "左上"
-              },
-              "options__3": {
-                "label": "上部中央"
-              },
-              "options__4": {
-                "label": "中央"
-              }
-            },
             "heading": {
               "label": "見出し"
             },
