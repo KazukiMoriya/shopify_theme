@@ -1,7 +1,6 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 
 
-
 {% comment %} {{ 'section-footer.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -217,12 +216,23 @@
 
 <footer class="l-footer">
   <div class="l-footer__inner">
+    <figure class="l-footer__imageWrap">
+      {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+      {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
+      {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
+        class: 'footer__heading-logo',
+        widths: '50, 100, 150, 200, 250, 300, 400, 500',
+        height: logo_height,
+        width: section.settings.logo_width,
+        alt: logo_alt
+      }}
+    </figure>
     <div class="l-footer-nav">
       <ul class="l-footer-nav__list">
-        <li class="l-footer-nav__item">項目１</li>
-        <li class="l-footer-nav__item">項目２</li>
-        <li class="l-footer-nav__item">項目３</li>
-        <li class="l-footer-nav__item">項目４</li>
+        <li class="l-footer-nav__item"><a href="">項目１</a></li>
+        <li class="l-footer-nav__item"><a href="">項目２</a></li>
+        <li class="l-footer-nav__item"><a href="">項目３</a></li>
+        <li class="l-footer-nav__item"><a href="">項目４</a></li>
         </ul>
     </div>
   </div>
