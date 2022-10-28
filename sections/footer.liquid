@@ -11,7 +11,7 @@
 <footer class="l-footer">
   <div class="l-footer__inner">
     <figure class="l-footer__logoWrap">
-    <a class="l-footer__logo" href=""></a>
+      <a class="l-footer__logo" href=""><img src="{{ section.settings.image_box | img_url: 'master' }}" alt="{{ section.settings.image_box.alt }}"></a>
     </figure>
     <div class="l-footer-nav">
       <ul class="l-footer-nav__list">
@@ -79,6 +79,20 @@
 
 {% schema %}
   {
+    "name": "画像ボックス",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_box",
+        "label": "画像を選ぶ"
+      }
+    ],
+    "presets": [
+      {
+        "name": "テスト画像",
+        "category": "画像"
+      }
+    ],
     "name": "t:sections.footer.name",
     "blocks": [
       {
