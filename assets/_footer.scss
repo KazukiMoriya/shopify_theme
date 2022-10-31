@@ -24,15 +24,22 @@
 }
 
 .l-footer__logo{
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   @include hover;
+  @include pc{
+    height: 90px;
+  }
+  @include spTab{
+    height: 50px;
+  }
 }
 
 .l-footer-nav{
-  width: calc(90% - 150px);
+  @include pc{
+    width: calc(90% - 150px);
+  }
 }
 
 .l-footer-nav__list{
@@ -53,6 +60,7 @@
     }
   }
   @include spTab{
+    text-align: center;
     &:nth-child(n + 2){
       margin-top: 20px;
     }
