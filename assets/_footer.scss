@@ -16,6 +16,7 @@
   margin: 0 auto;
   @include pc{
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 }
