@@ -1,4 +1,5 @@
 @use "./variable" as *;
+@use "./mixin" as *;
 .l-footer{
   padding: 80px 0;
   border-top: 1px solid $black;
