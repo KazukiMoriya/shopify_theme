@@ -9,13 +9,18 @@
   max-width: 1200px;
   width: calc(100% - 60px);
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  @include pc{
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .l-footer__logoWrap{
   width: 150px;
   border: 1px solid $black;
+  @include spTab{
+    margin: 0 auto;
+  }
 }
 
 .l-footer__logo{
@@ -31,9 +36,13 @@
 }
 
 .l-footer-nav__list{
+  display: flex;
   @include pc{
-    display: flex;
     flex-wrap: wrap;
+  }
+  @include spTab{
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
