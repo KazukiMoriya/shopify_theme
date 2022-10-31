@@ -6,6 +6,7 @@
 
 .l-footer__inner{
   max-width: 1200px;
+  width: calc(100% - 60px);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -17,7 +18,7 @@
 }
 
 .l-footer__logo{
-  height: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,13 +30,22 @@
 }
 
 .l-footer-nav__list{
-  display: flex;
-  flex-wrap: wrap;
+  @include pc{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .l-footer-nav__item{
-  &:nth-child(n + 2){
-    margin-left: 20px;
+  @include pc{
+    &:nth-child(n + 2){
+      margin-left: 20px;
+    }
+  }
+  @include spTab{
+    &:nth-child(n + 2){
+      margin-top: 20px;
+    }
   }
 }
 
