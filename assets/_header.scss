@@ -37,12 +37,6 @@
   justify-content: center;
   border: 1px solid $black;
   font-size: 14px;
-  @include pc{
-    height: 50px;
-  }
-  @include spTab{
-    height: 40px;
-  }
   @include hover;
 }
 
