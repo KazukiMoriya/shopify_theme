@@ -134,14 +134,14 @@
     }
      &.is-active{
       &:first-child{
-        transform: translateY(5px) rotate(50deg);
+        transform: translateY(10px) rotate(50deg);
       }
       &:nth-child(2){
-        transform: translateY(10px);
+        transform: translateX(-10px);
         opacity: 0;
       }
       &:nth-child(3){
-        transform: translateY(-5px) rotate(-50deg);
+        transform: translateY(-10px) rotate(-50deg);
       }
      }
   }
