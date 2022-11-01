@@ -47,3 +47,9 @@
     opacity: 0.7;
   }
 }
+
+@mixin hover2 {
+  &:hover{
+    background-color: rgba($color: $orange, $alpha: 0.8);
+  }
+}

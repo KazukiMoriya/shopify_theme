@@ -68,7 +68,7 @@
 .l-footer-top-nav__item{
   @include pc{
     &:nth-child(n + 2){
-      margin-left: 20px;
+      margin-left: 30px;
     }
   }
   @include spTab{
@@ -80,7 +80,7 @@
 }
 
 .l-footer-top-nav__anchor{
-  @include hover;
+  @include hover2;
 }
 
 .l-footer-bottom__copyright{
