@@ -95,11 +95,8 @@
   display: block;
   @include spTab{
     padding: 20px 0;
-    &:hover{
-      background-color: $orange;
-    }
   }
-  @include hover;
+  @include hover2;
 }
 
 .l-header__hamburger{
@@ -133,7 +130,7 @@
     &:nth-child(3){
       top: 21px;
     }
-     &.is-active{
+    &.is-active{
       &:first-child{
         transform: translateY(10px) rotate(48deg);
       }
@@ -144,6 +141,6 @@
       &:nth-child(3){
         transform: translateY(-10px) rotate(-48deg);
       }
-     }
+    }
   }
 }
