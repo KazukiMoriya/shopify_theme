@@ -50,6 +50,6 @@
 
 @mixin hover2 {
   &:hover{
-    background-color: $white;
+    background-color: rgba($color: $white, $alpha: 0.6);
   }
 }
