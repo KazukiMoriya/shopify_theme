@@ -3,10 +3,10 @@
 .l-footer{
   border-top: 1px solid $black;
   @include pc{
-    padding: 60px 0;
+    padding: 30px 0;
   }
   @include spTab{
-    padding: 40px 0;
+    padding: 20px 0;
   }
 }
 
@@ -25,7 +25,7 @@
 }
 
 .l-footer-top__logoWrap{
-  width: 140px;
+  width: 120px;
   border: 1px solid $black;
   @include spTab{
     margin: 0 auto;
@@ -41,7 +41,7 @@
 
 .l-footer-top-nav{
   @include pc{
-    width: calc(90% - 140px);
+    width: calc(90% - 120px);
   }
   @include spTab{
     margin-top: 30px;
