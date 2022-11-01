@@ -133,7 +133,6 @@
       top: 21px;
     }
      &.is-active{
-      background-color: $white;
       &:first-child{
         transform: translateY(10px) rotate(48deg);
       }
