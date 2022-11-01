@@ -55,8 +55,11 @@
     padding: 70px 0 30px;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -110%;
     background-color: $orange;
+    &.is-show{
+      right: 0;
+    }
   }
 }
 
@@ -78,6 +81,8 @@
     }
   }
   @include spTab{
+    width: 100%;
+    text-align: center;
     &:nth-child(n + 2){
       margin-top: 10px;
     }
@@ -103,6 +108,7 @@
     position: absolute;
     right: 0;
     top: 50%;
+    cursor: pointer;
     transform: translateY(-50%);
     display: flex;
   }
