@@ -44,11 +44,18 @@
 
 @mixin hover {
   &:hover{
-    opacity: 0.7;
+    opacity: 0.6;
+  }
+}
+
+@mixin hover2 {
+  &:hover{
+    background-color: rgba($color: $black, $alpha: 0.2);
   }
 }
 
 @mixin hover3 {
+  position: relative;
   &:after{
     content: "";
     width: 100%;
@@ -67,11 +74,5 @@
       bottom: 0;
       opacity: 1;
     }
-  }
-}
-
-@mixin hover2 {
-  &:hover{
-    background-color: rgba($color: $black, $alpha: 0.2);
   }
 }
