@@ -21,7 +21,7 @@
   }
 }
 
-.l-footer__logoWrap{
+.l-footer-top__logoWrap{
   width: 150px;
   border: 1px solid $black;
   @include spTab{
@@ -29,7 +29,7 @@
   }
 }
 
-.l-footer__logo{
+.l-footer-top__logo{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +42,7 @@
   }
 }
 
-.l-footer-nav{
+.l-footer-top-nav{
   @include pc{
     width: calc(90% - 150px);
   }
@@ -51,7 +51,7 @@
   }
 }
 
-.l-footer-nav__list{
+.l-footer-top-nav__list{
   display: flex;
   @include pc{
     flex-wrap: wrap;
@@ -62,7 +62,7 @@
   }
 }
 
-.l-footer-nav__item{
+.l-footer-top-nav__item{
   @include pc{
     &:nth-child(n + 2){
       margin-left: 20px;
@@ -76,7 +76,7 @@
   }
 }
 
-.l-footer-nav__anchor{
+.l-footer-top-nav__anchor{
   @include hover;
 }
 
