@@ -94,10 +94,13 @@
 
 .l-header-nav__anchor{
   display: block;
+  @include pc{
+    @include hover3
+  }
   @include spTab{
     padding: 20px 0;
+    @include hover2;
   }
-  @include hover2;
 }
 
 .l-header__hamburger{
