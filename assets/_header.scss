@@ -57,7 +57,8 @@
     top: 0;
     right: -110%;
     transition: right 0.4s;
-    background-color: $orange;
+    border-radius: 0 0 0 20px;
+    background-color: $white;
     &.is-show{
       right: 0;
     }
@@ -95,7 +96,7 @@
   @include spTab{
     padding: 20px 0;
     &:hover{
-      background-color: $orange2;
+      background-color: $orange;
     }
   }
   @include hover;
@@ -137,7 +138,7 @@
         transform: translateY(10px) rotate(48deg);
       }
       &:nth-child(2){
-        transform: translateX(-10px);
+        transform: translateX(10px);
         opacity: 0;
       }
       &:nth-child(3){
