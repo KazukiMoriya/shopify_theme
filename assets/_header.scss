@@ -58,6 +58,8 @@
     top: 0;
     right: -110%;
     transition: right 0.4s;
+    border-left: 1px solid $black;
+    border-bottom: 1px solid $black;
     border-radius: 0 0 0 20px;
     background-color: $white;
     &.is-show{
