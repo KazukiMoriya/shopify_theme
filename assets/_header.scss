@@ -43,6 +43,7 @@
   @include spTab{
     height: 30px;
   }
+  @include hover;
 }
 
 .l-header-nav{
@@ -58,7 +59,7 @@
     right: -110%;
     transition: right 0.4s;
     border-radius: 0 0 0 20px;
-    background-color: $white;
+    background: linear-gradient(to bottom, #fff7ef, #ffe2c6);
     &.is-show{
       right: 0;
     }
