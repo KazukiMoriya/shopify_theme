@@ -25,7 +25,7 @@
 }
 
 .l-footer-top__logoWrap{
-  width: 120px;
+  width: 140px;
   border: 1px solid $black;
   @include spTab{
     margin: 0 auto;
@@ -47,7 +47,7 @@
 
 .l-footer-top-nav{
   @include pc{
-    width: calc(90% - 120px);
+    width: calc(90% - 140px);
   }
   @include spTab{
     margin-top: 30px;
