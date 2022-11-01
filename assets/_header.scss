@@ -7,7 +7,6 @@
   }
   @include spTab{
     padding: 10px 0;
-    position: relative;
   }
 }
 
@@ -18,6 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include spTab{
+    position: relative;
+  }
 }
 
 .l-header__logoWrap{
@@ -34,18 +36,18 @@
   align-items: center;
   justify-content: center;
   border: 1px solid $black;
+  font-size: 14px;
   @include pc{
     height: 50px;
   }
   @include spTab{
     height: 30px;
-    font-size: 14px;
   }
 }
 
 .l-header-nav{
   @include pc{
-    width: calc(100% - 150px);
+    width: calc(96% - 150px);
   }
   @include spTab{
     width: 210px;
@@ -61,6 +63,9 @@
 .l-header-nav__list{
   display: flex;
   align-items: center;
+  @include pc{
+    justify-content: flex-end;
+  }
   @include spTab{
     flex-direction: column;
   }
@@ -85,11 +90,11 @@
 }
 
 .l-header__hamburger{
-  @include sp{
+  @include spTab{
     width: 30px;
     height: 25px;
     position: absolute;
-    right: 20px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -97,7 +102,7 @@
 }
 
 .l-header__bar{
-  @include sp{
+  @include spTab{
     width: 100%;
     height: 1px;
     display: inline-block;
