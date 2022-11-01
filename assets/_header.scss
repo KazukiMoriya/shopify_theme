@@ -30,13 +30,16 @@
 }
 
 .l-header__logo{
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid $black;
   @include pc{
     height: 50px;
   }
   @include spTab{
     height: 30px;
+    font-size: 14px;
   }
 }
 
@@ -45,8 +48,9 @@
     width: calc(100% - 150px);
   }
   @include spTab{
-    width: 100%;
+    width: 210px;
     height: 90vh;
+    padding: 70px 0 30px;
     position: fixed;
     top: 0;
     right: 0;
@@ -85,6 +89,9 @@
     width: 30px;
     height: 25px;
     position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
   }
 }
