@@ -1,0 +1,110 @@
+@use "./variable" as *;
+@use "./mixin" as *;
+
+.l-header{
+  @include pc{
+    padding: 20px 0;
+  }
+  @include spTab{
+    padding: 10px 0;
+    position: relative;
+  }
+}
+
+.l-header__inner{
+  max-width: 1200px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.l-header__logoWrap{
+  @include pc{
+    width: 150px;
+  }
+  @include spTab{
+    width: 120px;
+  }
+}
+
+.l-header__logo{
+  display: block;
+  border: 1px solid $black;
+  @include pc{
+    height: 50px;
+  }
+  @include spTab{
+    height: 30px;
+  }
+}
+
+.l-header-nav{
+  @include pc{
+    width: calc(100% - 150px);
+  }
+  @include spTab{
+    width: 100%;
+    height: 90vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $orange;
+  }
+}
+
+.l-header-nav__list{
+  display: flex;
+  align-items: center;
+  @include spTab{
+    flex-direction: column;
+  }
+}
+
+.l-header-nav__item{
+  @include pc{
+    &:nth-child(n + 2){
+      margin-left: 20px;
+    }
+  }
+  @include spTab{
+    &:nth-child(n + 2){
+      margin-top: 30px;
+    }
+  }
+}
+
+.l-header-nav__anchor{
+  display: block;
+  @include hover;
+}
+
+.l-header__hamburger{
+  @include sp{
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    display: flex;
+  }
+}
+
+.l-header__bar{
+  @include sp{
+    width: 100%;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    background-color: $black;
+    &:first-child{
+      top: 1px;
+    }
+    &:nth-child(2){
+      top: 10px;
+    }
+    &:nth-child(3){
+      top: 20px;
+    }
+  }
+}
