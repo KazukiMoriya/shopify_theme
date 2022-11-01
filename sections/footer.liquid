@@ -11,7 +11,23 @@
 <footer class="l-footer">
   <div class="l-footer__inner">
     <div class="l-footer-top">
-      <figure class="l-footer-top__logoWrap"><a class="l-footer-top__logo" href="#">ロゴ</a></figure>
+      <figure class="l-footer-top__logoWrap">
+        <a class="l-footer-top__logo" href="#">
+          {%- if section.settings.logo != blank -%}
+            {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
+            {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
+            {{ section.settings.logo | image_url: width: section.settings.width | image_tag:
+              class: '',
+              widths: '50, 100, 150, 200, 250, 300, 400, 500',
+              height: logo_height,
+              width: section.settings.logo_width,
+              alt: logo_alt
+            }}
+          {%- else -%}
+            <span>{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      </figure>
       <div class="l-footer-top-nav">
         <ul class="l-footer-top-nav__list">
           <li class="l-footer-top-nav__item"><a class="l-footer-top-nav__anchor" href="">項目１</a></li>
@@ -222,6 +238,45 @@
         "type": "header",
         "content": "t:sections.footer.settings.header__3.content",
         "info": "t:sections.footer.settings.header__4.info"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:sections.footer.settings.logo.label"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 50,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+        "unit": "t:sections.footer.settings.logo_width.unit",
+        "label": "t:sections.footer.settings.logo_width.label"
+      },
+      {
+        "type": "select",
+        "id": "logo_position",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "t:sections.footer.settings.logo_position.options__2.label"
+          },
+          {
+            "value": "top-center",
+            "label": "t:sections.footer.settings.logo_position.options__3.label"
+          },
+          {
+            "value": "middle-left",
+            "label": "t:sections.footer.settings.logo_position.options__1.label"
+          },
+          {
+            "value": "middle-center",
+            "label": "t:sections.footer.settings.logo_position.options__4.label"
+          }
+        ],
+        "default": "middle-left",
+        "label": "t:sections.footer.settings.logo_position.label"
       },
       {
         "type": "checkbox",
