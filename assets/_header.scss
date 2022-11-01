@@ -50,8 +50,8 @@
     width: calc(96% - 150px);
   }
   @include spTab{
-    width: 210px;
-    height: 90vh;
+    width: 250px;
+    height: 70vh;
     padding: 70px 0 30px;
     position: fixed;
     top: 0;
@@ -86,6 +86,9 @@
 
 .l-header-nav__anchor{
   display: block;
+  @include spTab{
+    color: $white
+  }
   @include hover;
 }
 
@@ -108,15 +111,28 @@
     display: inline-block;
     position: absolute;
     left: 0;
+    transition: transform 0.4s , opacity 0.4s;
     background-color: $black;
     &:first-child{
       top: 1px;
     }
     &:nth-child(2){
-      top: 10px;
+      top: 11px;
     }
     &:nth-child(3){
-      top: 20px;
+      top: 21px;
     }
+     &.is-active{
+      &:first-child{
+        transform: translateY(5px) rotate(50deg);
+      }
+      &:nth-child(2){
+        transform: translateY(10px);
+        opacity: 0;
+      }
+      &:nth-child(3){
+        transform: translateY(-5px) rotate(-50deg);
+      }
+     }
   }
 }
