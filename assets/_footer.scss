@@ -36,12 +36,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include pc{
-    height: 90px;
-  }
-  @include spTab{
-    height: 50px;
-  }
   @include hover;
 }
 

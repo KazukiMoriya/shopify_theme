@@ -767,6 +767,28 @@
         "newsletter_heading": {
           "label": "見出し"
         },
+        "logo": {
+          "label": "ロゴ画像"
+        },
+        "logo_width": {
+          "unit": "ピクセル",
+          "label": "ロゴの幅をカスタマイズする"
+        },
+        "logo_position": {
+          "label": "デスクトップのロゴ位置",
+          "options__1": {
+            "label": "中央部左側"
+          },
+          "options__2": {
+            "label": "左上"
+          },
+          "options__3": {
+            "label": "上部中央"
+          },
+          "options__4": {
+            "label": "中央"
+          }
+        },
         "header__1": {
           "info": "「マーケティングを受け入れる」のお客様リストに自動的に追加された購読者。[詳しくはこちら](https://help.shopify.com/manual/customers/manage-customers)",
           "content": "メール登録"
