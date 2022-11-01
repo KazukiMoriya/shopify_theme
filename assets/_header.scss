@@ -79,7 +79,7 @@
   }
   @include spTab{
     &:nth-child(n + 2){
-      margin-top: 30px;
+      margin-top: 10px;
     }
   }
 }
@@ -87,7 +87,11 @@
 .l-header-nav__anchor{
   display: block;
   @include spTab{
-    color: $white
+    padding: 20px 0;
+    &:hover{
+      color: $orange;
+      background-color: $white;
+    }
   }
   @include hover;
 }
