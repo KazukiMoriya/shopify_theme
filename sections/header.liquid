@@ -543,7 +543,7 @@
   <header class="l-header">
     <div class="l-header__inner">
       <h1 class="l-header__logoWrap">
-        <a class="l-header__logo" href="">
+        <a class="l-header__logo" href="./">
           {%- if section.settings.logo != blank -%}
             {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
             {%- assign logo_height = section.settings.logo_width | divided_by: section.settings.logo.aspect_ratio -%}
@@ -561,10 +561,10 @@
       </h1>
       <nav class="l-header-nav">
         <ul class="l-header-nav__list">
-        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./pages/company">項目1</a></li>
-        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="">項目2</a></li>
-        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="">項目3</a></li>
-        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="">項目4</a></li>
+        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./">TOP</a></li>
+        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./products">商品一覧</a></li>
+        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./pages/company">会社概要</a></li>
+        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="">お問い合わせ</a></li>
         </ul>
       </nav>
       <div class="l-header__hamburger is-hidePc js-hamburger">
