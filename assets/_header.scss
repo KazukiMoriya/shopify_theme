@@ -95,6 +95,7 @@
 .l-header-nav__anchor{
   display: block;
   @include pc{
+    position: relative;
     @include hover3
   }
   @include spTab{
