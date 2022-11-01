@@ -25,9 +25,12 @@
 }
 
 .l-footer-top__logoWrap{
-  width: 120px;
   border: 1px solid $black;
+  @include pc{
+    width: 120px;
+  }
   @include spTab{
+    width: 100px;
     margin: 0 auto;
   }
 }
