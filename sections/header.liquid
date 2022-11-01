@@ -287,7 +287,7 @@
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
-      {%- endif -%}
+        {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
             {%- if section.settings.logo != blank -%}
               {%- assign logo_alt = section.settings.logo.alt | default: shop.name | escape -%}
@@ -303,7 +303,7 @@
               <span class="h2">{{ shop.name }}</span>
             {%- endif -%}
           </a>
-      {%- if request.page_type == 'index' -%}
+        {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
     {%- endif -%}
@@ -561,8 +561,8 @@
       </h1>
       <nav class="l-header-nav">
         <ul class="l-header-nav__list">
-        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./">TOP</a></li>
-        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./products">商品一覧</a></li>
+        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="/">TOP</a></li>
+        <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./collections/frontpage">商品一覧</a></li>
         <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="./pages/company">会社概要</a></li>
         <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="">お問い合わせ</a></li>
         </ul>
