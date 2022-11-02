@@ -237,11 +237,11 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
-    <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
+    {% comment %} <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script> {% endcomment %}
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
       <script>
-        swiper2 = new Swiper('.p-top-mainVisual .swiper', {
+        var swiper2 = new Swiper('.p-top-mainVisual .swiper', {
           // Optional parameters
           direction: 'vertical',
           loop: true,
