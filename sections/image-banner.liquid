@@ -87,25 +87,16 @@
 
 <div class="p-top-mainVisual">
 
-    <!-- Slider main container -->
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
+  <div class="image-carousel swiper">
+    <div class="image-carousel__wrapper swiper-wrapper">
+      <div class="image-carousel__slide swiper-slide">Slide 1</div>
+      <div class="image-carousel__slide swiper-slide">Slide 2</div>
+      <div class="image-carousel__slide swiper-slide">Slide 3</div>
     </div>
+    <div class="image-carousel__pagination swiper-pagination"></div>
+    <div class="image-carousel__btn image-carousel__btn--prev swiper-button-prev"></div>
+    <div class="image-carousel__btn image-carousel__btn--next swiper-button-next"></div>
+  </div>
 
 </div>
 
@@ -425,10 +416,6 @@
           "type": "buttons"
         }
       ]
-    },
-    {
-      "name": "スライドショー Swiper",
-      "category": "画像"
     }
   ]
 }
