@@ -242,7 +242,7 @@
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
       <script>
-        $(window).on("ready",function(){
+        $(window).on("load",function(){
           new Swiper('.swiper',{
             loop: true,
             pagination: {
