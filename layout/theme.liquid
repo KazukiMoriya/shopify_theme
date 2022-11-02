@@ -243,7 +243,7 @@
       <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer></script>
     {%- endif -%}
     <script defer>
-      const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.swiper', {
       // Optional parameters
       // direction: 'vertical',
       spaceBetween: 30,
@@ -251,13 +251,10 @@
       pagination: {
       el: '.swiper-pagination',
       clickable: true,
-
-  },  
       loop: true,
       autoplay: {
         delay: {{ section.settings.slide_interval  | times:1000 }},
       },
-
       // If we need pagination
       pagination: {
           el: '.swiper-pagination',
@@ -266,8 +263,8 @@
       navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
-      },
-      });
+      }
+    });
   </script>
   <style>
     .swiper {
