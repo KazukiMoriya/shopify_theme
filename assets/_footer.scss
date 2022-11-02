@@ -77,6 +77,8 @@
 }
 
 .l-footer-top-nav__anchor{
+  padding-bottom: 3px;
+  transform: translateY(-3px);
   display: inline-block;
   @include hover3;
 }
