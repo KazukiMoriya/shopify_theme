@@ -237,20 +237,13 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
-    {% comment %} <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script> {% endcomment %}
+    <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
       <script>
         document.addEventListener('DOMContentLoaded', () => {
           new Swiper('.image-carousel.swiper', {
             loop: true,
-            pagination: {
-              el: '.swiper-pagination',
-            },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
           });
         });
       </script>
