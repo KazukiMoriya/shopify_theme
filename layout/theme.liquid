@@ -240,7 +240,7 @@
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
-      <script defer>
+      <script type="text/javascript" defer>
         const swiper = new Swiper('.swiper', {
           // Optional parameters
           direction: 'vertical',
