@@ -7,7 +7,7 @@
     <meta name="theme-color" content="">
     <link href="{{'_common.css' | asset_url }}" rel="stylesheet">
     {%- if template == 'index' -%}
-      
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     {%- endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -239,9 +239,76 @@
     </script>
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     <script src="{{ '_index.js' | asset_url }}" defer></script>
-    {% comment %} {%- if template == 'index' -%}
+    {%- if template == 'index' -%}
+      <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer></script>
 
-    {%- endif -%} {% endcomment %}
+      <script>
+          const swiper = new Swiper('.swiper', {
+          // Optional parameters
+          // direction: 'vertical',
+          spaceBetween: 30,
+          effect: 'fade',  
+          pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+  
+      },  
+          loop: true,
+          autoplay: {
+            delay: {{ section.settings.slide_interval  | times:1000 }},
+          },
+  
+          // If we need pagination
+          pagination: {
+              el: '.swiper-pagination',
+          },
+          // Navigation arrows
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          });
+      </script>
+      <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+          	margin-top:10vh;
+        }
+
+        .swiper-wrapper{
+            /* width: 600px; */
+            height: 500px;
+        }
+
+        .swiper-slide{
+            background: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .swiper-slide img{
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-slide-txt{
+            font-size: 60px;
+          	font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+          	color:#000;
+        }
+    </style>
+    {%- endif -%}
   </head>
 
   <body class="gradient">
