@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="stylesheet" href="{{'_common.css' | asset_url }}">
+    {%- if template == 'index' -%}
+      <link rel="stylesheet" href="{{ '_swiper-bundle.min.css' | asset_url }}">
+    {%- endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     {%- if settings.favicon != blank -%}
@@ -234,8 +237,14 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+    {%- if template == 'index' -%}
+      <script src="{{ '_swiper-bundle.min' | asset_url }}" defer="defer"></script>
+      <script>
+        const mySwiper = new Swiper ('.swiper', {
+        })
+      </script>
+    {%- endif -%}
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ '_swiper-bundle.min' | asset_url }}" defer="defer"></script>
     <script src="{{ '_index.js' | asset_url }}" defer="defer"></script>
   </head>
 
