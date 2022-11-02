@@ -7,7 +7,7 @@
     <meta name="theme-color" content="">
     <link href="{{'_common.css' | asset_url }}" rel="stylesheet">
     {%- if template == 'index' -%}
-    <link href="{{'_swiper-bundle.min.css' | asset_url }}" rel="stylesheet">
+    <link href="{{'_slick.css' | asset_url }}" rel="stylesheet">
     {%- endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -240,30 +240,13 @@
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     <script src="{{ '_index.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
-      <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
-      {%- endif -%}
-      <script defer>
-        const mySwiper = new Swiper('.swiper', {
-          // Optional parameters
-          loop: true,
-         
-          // If we need pagination
-          pagination: {
-            el: '.swiper-pagination',
-          },
-         
-          // Navigation arrows
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-         
-          // And if we need scrollbar
-          scrollbar: {
-            el: '.swiper-scrollbar',
-          },
-        });
+      <script src="{{ '_slick.min.js' | asset_url }}" defer></script>
+      <script>
+      $(".js-slick").slick({
+        dots: true,
+      });
       </script>
+    {%- endif -%}
   </head>
 
   <body class="gradient">
