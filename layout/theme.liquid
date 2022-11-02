@@ -238,15 +238,17 @@
     }
     </script>
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
-    <script src="{{ '_index.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
       <script src="{{ '_slick.min.js' | asset_url }}" defer></script>
-      <script>
-      $(".js-slick").slick({
-        dots: true,
-      });
+      <script defer>
+        $(function(){
+          $(".js-slick").slick({
+            dots: true,
+          });
+        });
       </script>
     {%- endif -%}
+    <script src="{{ '_index.js' | asset_url }}" defer></script>
   </head>
 
   <body class="gradient">
