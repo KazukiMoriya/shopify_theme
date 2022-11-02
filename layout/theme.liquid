@@ -7,7 +7,7 @@
     <meta name="theme-color" content="">
     <link href="{{'_common.css' | asset_url }}" rel="stylesheet">
     {%- if template == 'index' -%}
-    <link href="{{'_slick.css' | asset_url }}" rel="stylesheet">
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     {%- endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -239,7 +239,34 @@
     </script>
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
-      <script src="{{ '_slick.min.js' | asset_url }}" defer></script>
+      <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js" defer></script>
+      <script>
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        // direction: 'vertical',
+        spaceBetween: 30,
+        effect: 'fade',  
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+
+    },  
+        loop: true,
+        autoplay: {
+          delay: {{ section.settings.slide_interval  | times:1000 }},
+        },
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
+    </script>
     {%- endif -%}
     <script src="{{ '_index.js' | asset_url }}" defer></script>
   </head>
