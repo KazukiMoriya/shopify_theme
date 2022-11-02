@@ -238,6 +238,7 @@
     }
     </script>
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
+    <script src="{{ '_index.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
       <script>
@@ -251,7 +252,6 @@
         });
       </script>
     {%- endif -%}
-    <script src="{{ '_index.js' | asset_url }}" defer></script>
   </head>
 
   <body class="gradient">
