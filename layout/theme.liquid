@@ -237,33 +237,35 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+    <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
+    <script src="{{ '_index.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
-    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
-    <!-- Initialize Swiper -->
-    <script type="text/JavaScript">
-      const swiper = new Swiper('.swiper', {
-          // Optional parameters
-          direction: 'horizontal',
-          loop: true,
-          // If we need pagination
-          pagination: {
-            el: '.swiper-pagination',
-          },
-          // Navigation arrows
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          // And if we need scrollbar
-          scrollbar: {
-            el: '.swiper-scrollbar',
-          },
-      });
-      swiper();
-    </script>
-    {%- endif -%}
-    <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ '_index.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+      <!-- Initialize Swiper -->
+      <script type="text/JavaScript" defer>
+        $(function(){
+          const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            // If we need pagination
+            pagination: {
+              el: '.swiper-pagination',
+            },
+            // Navigation arrows
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            // And if we need scrollbar
+            scrollbar: {
+              el: '.swiper-scrollbar',
+            },
+        });
+        swiper();
+        });
+      </script>
+      {%- endif -%}
   </head>
 
   <body class="gradient">
