@@ -240,6 +240,29 @@
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+      <script>
+        swiper = new Swiper('.swiper', {
+          // Optional parameters
+          direction: 'vertical',
+          loop: true,
+        
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        });
+      </script>
     {%- endif -%}
     <script src="{{ '_index.js' | asset_url }}" defer></script>
   </head>
