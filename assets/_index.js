@@ -8,4 +8,8 @@ $(function(){
     }
   });
 
+  $(".js-slick").slick({
+    dots: true,
+  });
+
 });
