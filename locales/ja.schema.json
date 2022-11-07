@@ -994,6 +994,13 @@
         }
       },
       "blocks": {
+        "slide": {
+          "settings": {
+            "image": {
+              "label": "スライド画像設定"
+            }
+          }
+        },
         "heading": {
           "settings": {
             "heading": {

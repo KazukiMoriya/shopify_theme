@@ -116,11 +116,6 @@
       "label": "t:sections.image-banner.settings.image_2.label"
     },
     {
-      "type": "image_picker",
-      "id": "image_3",
-      "label": "t:sections.image-banner.settings.image_3.label"
-    },
-    {
       "type": "range",
       "id": "image_overlay_opacity",
       "min": 0,
@@ -295,6 +290,17 @@
     }
   ],
   "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.image-banner.blocks.column.name",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-banner.blocks.column.settings.image"
+        }
+      ]
+    },
     {
       "type": "heading",
       "name": "t:sections.image-banner.blocks.heading.name",
