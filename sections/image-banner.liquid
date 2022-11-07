@@ -86,16 +86,14 @@
 
 
 <div class="p-top-mainVisual">
-
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="{{ '_lunch.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></div>
-      <div class="swiper-slide"><img src="{{ '_lunch2.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></div>
-      <div class="swiper-slide"><img src="{{ '_lunch3.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></div>
+      {% if section .settings.logo != blank %}
+      <figure class="swiper-slide"><img src="{{ '_lunch.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></figure>
+      {% endif %}
     </div>
     <div class="swiper-pagination"></div>
   </div>
-
 </div>
 
 
@@ -287,6 +285,11 @@
       "id": "show_text_below",
       "default": true,
       "label": "t:sections.image-banner.settings.show_text_below.label"
+    },
+    {
+      "image_carousel":{
+        "type": "image-carousel"
+      }
     }
   ],
   "blocks": [
@@ -396,6 +399,28 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "name": "t:sections.multicolumn.blocks.column.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-banner.blocks.image.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Slide",
+          "label": "t:sections.image-banner.blocks.title.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.image-banner.blocks.link.label"
         }
       ]
     }
