@@ -1,7 +1,7 @@
 {
   "sections": {
     "image_carousel": {
-      "type": "image-carousel"
+      "type": "image-banner"
     },
     "image_banner": {
       "type": "image-banner",
