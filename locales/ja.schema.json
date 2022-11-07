@@ -2728,6 +2728,18 @@
         "name": "スライドショー"
       }
     },
+    "slider":{
+      "name": "スライダー",
+      "settings": {
+
+      },
+      "blocks": {
+
+      },
+      "preset": {
+        "name": "スライダー"
+      }
+    },
     "collapsible_content": {
       "name": "折りたたみ可能なコンテンツ",
       "settings": {
