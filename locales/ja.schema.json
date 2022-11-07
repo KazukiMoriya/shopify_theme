@@ -2729,7 +2729,10 @@
       }
     },
     "slider": {
-      "name": "スライダー"
+      "name": "スライダー",
+      "preset": {
+        "name": "スライダー"
+      }
     },
     "collapsible_content": {
       "name": "折りたたみ可能なコンテンツ",
