@@ -996,7 +996,7 @@
       "blocks": {
         "slide": {
           "settings": {
-            "image": {
+            "slide_image": {
               "label": "スライド画像設定"
             }
           },
