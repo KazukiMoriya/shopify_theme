@@ -86,14 +86,16 @@
 
 
 <div class="p-top-mainVisual">
+
   <div class="swiper">
     <div class="swiper-wrapper">
-      {% if section .settings.logo != blank %}
-      <figure class="swiper-slide"><img src="{{ '_lunch.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></figure>
-      {% endif %}
+      <div class="swiper-slide"><img src="{{ '_lunch.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></div>
+      <div class="swiper-slide"><img src="{{ '_lunch2.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></div>
+      <div class="swiper-slide"><img src="{{ '_lunch3.jpeg' | asset_url }}" alt="" width="" height="" loading="lazy"></div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
+
 </div>
 
 
@@ -396,7 +398,6 @@
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
         }
       ]
-    },{
     }
   ],
   "presets": [
