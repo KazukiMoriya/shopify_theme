@@ -998,6 +998,9 @@
           "settings": {
             "slide_image": {
               "label": "スライド画像設定"
+            },
+            "link": {
+              "label": "遷移先設定"
             }
           },
           "name": "スライド設定"
