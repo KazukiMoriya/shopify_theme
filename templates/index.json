@@ -1,8 +1,5 @@
 {
   "sections": {
-    "image_carousel": {
-      "type": "image-carousel"
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
