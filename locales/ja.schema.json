@@ -999,7 +999,8 @@
             "image": {
               "label": "スライド画像設定"
             }
-          }
+          },
+          "name": "スライド設定"
         },
         "heading": {
           "settings": {
