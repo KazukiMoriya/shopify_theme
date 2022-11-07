@@ -2730,7 +2730,9 @@
     },
     "slider": {
       "name": "スライダー",
-      "preset": {
+      "settings": {},
+      "blocks": {},
+      "presets": {
         "name": "スライダー"
       }
     },
