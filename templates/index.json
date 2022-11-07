@@ -1,5 +1,8 @@
 {
   "sections": {
+    "image_swiper":{
+      "type": "image-banner2"
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
