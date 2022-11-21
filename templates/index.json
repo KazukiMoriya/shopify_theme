@@ -218,7 +218,8 @@
       "type": "feature",
       "settings": {
         "title": "テキスト",
-        "read": "アイウエオ<br>\nああああああああ<br>"
+        "read": "アイウエオ<br>\nああああああああ<br>",
+        "image1": "shopify:\/\/shop_images\/shellfish-pasta-pizza-and-italian-food.jpg"
       }
     }
   },
