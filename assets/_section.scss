@@ -14,7 +14,9 @@
 }
 
 .original-section .description{
-  width: calc(100% - 470px);
+  width: calc(85% - 470px);
+  padding: 40px 0 20px;
+  border: 1px solid $black;
 }
 
 .original-section .heading{
