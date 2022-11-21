@@ -13,6 +13,10 @@
   justify-content: space-between;
 }
 
+.original-section .description{
+  width: calc(100 - 350px);
+}
+
 .original-section .heading{
   text-align: center;
 }
@@ -23,6 +27,7 @@
 }
 
 .original-section .imageWrap{
-  max-width: 280px;
+  max-width: 350px;
+  width: 100%;
   margin: 0 auto;
 }
