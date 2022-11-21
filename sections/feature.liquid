@@ -1,6 +1,6 @@
 <h2>{{section.settings.title}}</h2>
 <p>{{section.settings.read}}</p>
-<figure>{{section.settings.image1}}</figure>
+<figure><img src="{{section.settings.image1 | img_url : "medium"}}" alt=""></figure>
 {% schema %}
   {
     "name": "オリジナルセクション１",
