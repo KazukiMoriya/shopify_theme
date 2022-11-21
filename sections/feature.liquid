@@ -1,5 +1,6 @@
 <h2>{{section.settings.title}}</h2>
 <p>{{section.settings.read}}</p>
+<figure>{{section.setting.image1}}</figure>
 {% schema %}
   {
     "name": "オリジナルセクション１",
@@ -18,6 +19,10 @@
         "label": "リード文",
         "info": "改行時は文末に<br>を入れてください",
         "default": "リード文が入ります"
+      },
+      {
+        "type": "image-picker",
+        "id": "image1"
       }
     ],
     "presets": [
