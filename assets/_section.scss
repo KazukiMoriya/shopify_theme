@@ -14,7 +14,7 @@
 }
 
 .original-section .description{
-  width: calc(85% - 470px);
+  width: calc(85% - 430px);
   padding: 40px 0 20px;
   border: 1px solid $black;
 }
@@ -24,12 +24,13 @@
 }
 
 .original-section .text{
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
 
 .original-section .imageWrap{
-  max-width: 470px;
+  max-width: 430px;
   width: 100%;
   margin: 0 auto;
 }
