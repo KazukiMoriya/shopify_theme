@@ -218,7 +218,7 @@
       "type": "feature",
       "settings": {
         "title": "テキスト",
-        "read": "アイウエオ"
+        "read": "アイウエオ<br>\nああああああああ<br>"
       }
     }
   },
