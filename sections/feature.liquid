@@ -1,7 +1,17 @@
+<h2>{{section.settings.title}}</h2>
+
 {% schema %}
   {
     "name": "オリジナルセクション１",
-    "settings": [],
+    "tag": "section",
+    "settings": [
+      {
+      "type": "text",
+      "id": "title",
+      "label": "見出し",
+      "default": "テキストが入ります"
+      }
+    ],
     "presets": [
       {
       "name": "オリジナルセクション１"
@@ -9,9 +19,3 @@
     ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
