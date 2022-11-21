@@ -1,8 +1,25 @@
 @use "./variable" as *;
 @use "./mixin" as *;
+
+// .original-section
 .original-section{
   padding: 20px 0 40px;
 }
+
+.original-section .inner{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.original-section .heading{
+  text-align: center;
+}
+
+.original-section .text{
+  display: flex;
+  justify-content: center;
+}
+
 .original-section .imageWrap{
   max-width: 280px;
   margin: 0 auto;
