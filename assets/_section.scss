@@ -1,0 +1,6 @@
+@use "./variable" as *;
+@use "./mixin" as *;
+.original-section .imageWrap{
+  max-width: 680px;
+  margin: 0 auto;
+}
