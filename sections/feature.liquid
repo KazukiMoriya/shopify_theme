@@ -1,16 +1,18 @@
-
-<h2>オリジナルセクション</h2>
-<p>出力されるかな</p>
+  <h2 class="">{{section.settings.headline}}</h2>
+  <p>出力されるかな</p>
+</section>
 
 {% schema %}
   {
     "name": "オリジナルセクション1",
-    "settings": []
+    "tag": "section",
+    "class": "oriSec",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "見出し"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
