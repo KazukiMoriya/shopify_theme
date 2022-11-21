@@ -1,53 +1,21 @@
-<div class="container">
-  <h2 class="text-center">{{ section.settings.headline }}</h2>
-  <div class="row">
-    {% for block in section.blocks %} <!-- エディターで追加されたブロックをループ処理 -->
-      {% case block.type %}
-        {% when 'card' %} <!-- typeがcardなら以下の内容を表示 -->
-          <div class="col-4">
-            <div class="card">
-              
-              <div class="card-body">
-                <p class="card-text">{{block.settings.text}}</p>
-              </div>
-            </div>
-          </div>
-        {% when 'othertype' %} <!-- 他にブロックを定義している場合は続けてHTMLを記述 -->
-          ...
-      {% endcase %}
-    {% endfor %}
-  </div>
-</div>
+<img src="{{ section.settings.image_box | img_url: 'master' }}" alt="{{ section.settings.image_box.alt }}">
 
 {% schema %}
 {
-  "name": "CardSection",
-  "tag": "div",
-  "class": "card-section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "headline",
-      "label": "見出し"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Card", // ブロックの名前
-      "type": "card", // ブロックの識別子、文字は自由
-      "settings": [
-        {
-          "type": "image_picker", // Cardの画像設定、フォームタイプを選択
-          "id": "image", // 画像設定のID
-          "label": "画像"  // 画像設定のラベル
-        },
-        {
-          "type": "text", // Cardのテキスト設定
-          "id": "text",
-          "label": "テキスト"
-        }
-      ]
-    }
-  ]
+ "name": "画像ボックス",
+ "settings": [
+  {
+   "type": "image_picker",
+   "id": "image_box",
+   "label": "画像を選ぶ"
+  }
+ ],
+
+"presets": [
+  {
+   "name": "テスト画像",
+   "category": "画像"
+  }
+ ]
 }
 {% endschema %}
