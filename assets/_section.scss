@@ -1,5 +1,8 @@
 @use "./variable" as *;
 @use "./mixin" as *;
+.original-section{
+  padding: 20px 0 40px;
+}
 .original-section .imageWrap{
   max-width: 680px;
   margin: 0 auto;
