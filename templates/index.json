@@ -104,11 +104,6 @@
         "padding_bottom": 36
       }
     },
-    "slider": {
-      "type": "slider",
-      "settings": {
-      }
-    },
     "91cb15f5-6bc9-4122-9f93-32d78728f317": {
       "type": "feature",
       "settings": {
@@ -116,13 +111,19 @@
         "read": "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
         "image1": "shopify:\/\/shop_images\/shellfish-pasta-pizza-and-italian-food.jpg"
       }
+    },
+    "118519d0-e3c3-4a97-b75b-32774f82568e": {
+      "type": "feature2",
+      "settings": {
+        "origin_title": ""
+      }
     }
   },
   "order": [
     "image_banner",
     "rich_text",
     "featured_collection",
-    "slider",
-    "91cb15f5-6bc9-4122-9f93-32d78728f317"
+    "91cb15f5-6bc9-4122-9f93-32d78728f317",
+    "118519d0-e3c3-4a97-b75b-32774f82568e"
   ]
 }
