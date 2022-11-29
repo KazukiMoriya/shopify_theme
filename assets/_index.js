@@ -7,5 +7,4 @@ $(function(){
       $(".l-header-nav").removeClass("is-show");
     }
   });
-
 });
