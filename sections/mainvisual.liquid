@@ -3,9 +3,11 @@
 <div class="swiper">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
+    {% if section.blocks.settings.slide__anchor == true %}
     <div class="swiper-slide"><a href="">Slide 1</a></div>
-    <div class="swiper-slide"><a href="">Slide 2</a></div>
-    <div class="swiper-slide"><a href="">Slide 3</a></div>
+    {% else %}
+    <div class="swiper-slide">Slide 1</div>
+    {% endif %}
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
