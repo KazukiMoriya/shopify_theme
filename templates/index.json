@@ -2,7 +2,20 @@
   "sections": {
     "beb68de5-444d-4998-b070-bd3c70dfc7e2": {
       "type": "mainvisual",
+      "blocks": {
+        "da288d7e-62ec-4148-88c1-c7a096109dad": {
+          "type": "slide",
+          "settings": {
+            "slide__anchor": true,
+            "slide__url": ""
+          }
+        }
+      },
+      "block_order": [
+        "da288d7e-62ec-4148-88c1-c7a096109dad"
+      ],
       "settings": {
+        "slide__heading": ""
       }
     },
     "rich_text": {
