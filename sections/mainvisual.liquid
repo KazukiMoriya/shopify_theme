@@ -8,7 +8,7 @@
       {% if block.settings.slide__anchor == true %}
       <div class="swiper-slide"><a href="{{block.settings.slide__url}}"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></a></div>
       {% else %}
-      <div class="swiper-slide"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></div>
+      <div class="swiper-slide"><img src="{{block.settings.slide__image | img_url : 'master'}}" alt="{{section.settings.slide__image.alt}}" width="" height="" loading="eager"></div>
       {% endif %}
       {% endfor %}
     </div>
