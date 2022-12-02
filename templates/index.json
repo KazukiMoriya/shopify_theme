@@ -44,13 +44,22 @@
           "type": "feature__item",
           "settings": {
             "feature__itemTitle": "タイトル１タイトル１タイトル１",
-            "feature__itemText": "",
+            "feature__itemText": "テキストテキストテキストテキストテキストテキスト<br>\nテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
             "feature__itemImage": "shopify:\/\/shop_images\/AdobeStock_386990909_Preview.jpg"
+          }
+        },
+        "18bf84ce-355d-4e17-bbfc-d92c07818f3c": {
+          "type": "feature__item",
+          "settings": {
+            "feature__itemTitle": "タイトル２タイトル２タイトル２",
+            "feature__itemText": "テキストテキストテキストテキスト<br>\nテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
+            "feature__itemImage": "shopify:\/\/shop_images\/AdobeStock_242769990_Preview.jpg"
           }
         }
       },
       "block_order": [
-        "0858d461-f9cf-417f-b219-0949ac268993"
+        "0858d461-f9cf-417f-b219-0949ac268993",
+        "18bf84ce-355d-4e17-bbfc-d92c07818f3c"
       ],
       "settings": {
         "feature__heading": "お弁当の特徴"
