@@ -20,7 +20,7 @@
         "88312c14-6160-4db6-a902-1be306fe588c": {
           "type": "slide",
           "settings": {
-            "slide__anchor": true,
+            "slide__anchor": false,
             "slide__url": ""
           }
         }
