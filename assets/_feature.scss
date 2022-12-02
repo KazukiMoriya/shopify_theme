@@ -24,11 +24,20 @@
 .feature__item{
   display: flex;
   justify-content: space-between;
+  position: relative;
   &:nth-child(n + 2){
     margin-top: 30px;
   }
   &:nth-child(2n){
     flex-direction: row-reverse;
+    .feature__imageWrap{
+      left: 0;
+    }
+  }
+  &:not(:nth-child(2n)){
+    .feature__imageWrap{
+      right: 0;
+    }
   }
 }
 
@@ -52,6 +61,8 @@
 
 .feature__imageWrap{
   width: 380px;
+  position: absolute;
+  top: 0;
   border: 1px solid $black;
 }
 
