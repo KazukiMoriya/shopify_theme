@@ -1,13 +1,8 @@
 @use "./variable" as *;
 @use "./mixin" as *;
 .l-footer{
+  padding: 10px 0;
   border-top: 1px solid $black;
-  @include pc{
-    padding: 30px 0;
-  }
-  @include spTab{
-    padding: 20px 0;
-  }
 }
 
 .l-footer__inner{
