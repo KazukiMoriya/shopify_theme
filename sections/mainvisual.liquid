@@ -1,25 +1,27 @@
 <link rel=”stylesheet” href=”https://unpkg.com/swiper/swiper-bundle.min.css”/>
 <script src=”https://unpkg.com/swiper/swiper-bundle.min.js” defer></script>
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    {% for block in section.blocks %}
-    {% if block.settings.slide__anchor == true %}
-    <div class="swiper-slide"><a href="{{block.settings.slide__url}}"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></a></div>
-    {% else %}
-    <div class="swiper-slide"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></div>
-    {% endif %}
-    {% endfor %}
+<div class="inner">
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+      {% if block.settings.slide__anchor == true %}
+      <div class="swiper-slide"><a href="{{block.settings.slide__url}}"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></a></div>
+      {% else %}
+      <div class="swiper-slide"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
 </div>
 {% schema %}
   {
