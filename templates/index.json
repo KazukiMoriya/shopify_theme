@@ -44,7 +44,7 @@
           "type": "feature__item",
           "settings": {
             "feature__itemTitle": "タイトル１タイトル１タイトル１",
-            "feature__itemText": "<p>テキストテキストテキストテキスト<br\/>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<\/p>",
+            "feature__itemText": "",
             "feature__itemImage": "shopify:\/\/shop_images\/AdobeStock_386990909_Preview.jpg"
           }
         }
