@@ -37,6 +37,7 @@
   padding: 20px 30px;
   border: 1px solid $black;
   border-radius: 5px;
+  box-shadow: 3px 3px 2px rgba($color: $black, $alpha: 0.4);
 }
 
 .feature__itemTitle{
@@ -45,7 +46,7 @@
 }
 
 .feature__itemText{
-  margin-top: 10px;
+  margin-top: 15px;
   line-height: 1.65;
 }
 
