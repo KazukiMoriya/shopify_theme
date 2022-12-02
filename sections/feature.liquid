@@ -1,12 +1,51 @@
+<div class="feature__inner">
+  <h2 class="feature__heading"></h2>
+  <ul class="feature__list">
+    <li class="feature__item">
+      <div class="feature__description">
+        <h3 class="feature__title"></h3>
+        <p class="feature__text"></p>
+      </div>
+      <figure class="feature__imageWrap"><img src="" alt="" width="" height="" loading="lazy"></figure>
+    </li>
+  </ul>
+</div>
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "ダブルカラム",
+    "tag": "section",
+    "class": "feature",
+    "blocks": [
+      {
+        "type": "feature__item",
+        "name": "特徴項目",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "id": "feature__itemTitle",
+            "label": "項目タイトル"
+          },
+          {
+            "type": "textarea",
+            "id": "feature__itemText",
+            "label": "項目テキスト"
+          },
+          {
+            "type": "image_picker",
+            "id": "feature__itemImage",
+            "label": "項目のイメージ"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "feature__title",
+        "label": "セクションタイトル"
+      }
+    ]
   }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
