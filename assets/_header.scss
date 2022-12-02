@@ -1,20 +1,8 @@
 @use "./variable" as *;
 @use "./mixin" as *;
 
-.header-wrapper{
-  width: 100% !important;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-}
-
 .l-header{
-  @include pc{
-    padding: 20px 0;
-  }
-  @include spTab{
-    padding: 10px 0;
-  }
+  padding: 8px 0;
 }
 
 .l-header__inner{
