@@ -6,6 +6,7 @@
         "da288d7e-62ec-4148-88c1-c7a096109dad": {
           "type": "slide",
           "settings": {
+            "slide__image": "shopify:\/\/shop_images\/AdobeStock_39011397_Preview.jpg",
             "slide__anchor": false,
             "slide__url": "wefwjnfjnwjf"
           }
@@ -13,6 +14,7 @@
         "6240021f-cac5-429c-8810-f4f1c1c5d5c7": {
           "type": "slide",
           "settings": {
+            "slide__image": "shopify:\/\/shop_images\/AdobeStock_93195701_Preview.jpg",
             "slide__anchor": true,
             "slide__url": "https\/\/bwbfwbfw"
           }
@@ -20,6 +22,7 @@
         "88312c14-6160-4db6-a902-1be306fe588c": {
           "type": "slide",
           "settings": {
+            "slide__image": "shopify:\/\/shop_images\/AdobeStock_39011229_Preview.jpg",
             "slide__anchor": true,
             "slide__url": "http\/\/abcdef"
           }
