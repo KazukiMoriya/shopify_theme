@@ -2,8 +2,10 @@
 @use "./mixin" as *;
 
 .header-wrapper{
-  width: 100%;
-  position: fixed;
+  width: 100% !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
 }
 
 .l-header{
