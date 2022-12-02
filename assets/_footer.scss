@@ -19,33 +19,13 @@
   }
 }
 
-.l-footer-top__logoWrap{
-  width: 90px;
-}
-
-.l-footer-top__logo{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include hover;
-}
-
-.l-footer-top-nav{
-  @include pc{
-    width: calc(90% - 90px);
-  }
-  @include spTab{
-    margin-top: 30px;
-  }
-}
-
 .l-footer-top-nav__list{
   display: flex;
+  justify-content: center;
   @include pc{
     flex-wrap: wrap;
   }
   @include spTab{
-    justify-content: center;
     flex-direction: column;
   }
 }
