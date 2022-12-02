@@ -5,9 +5,9 @@
   <div class="swiper-wrapper">
     {% for block in section.blocks %}
     {% if block.settings.slide__anchor == true %}
-    <div class="swiper-slide"><a href="">Slide 1</a></div>
+    <div class="swiper-slide"><a href="{{block.settings.slide__url}}"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></a></div>
     {% else %}
-    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide"><img src="{{ block.settings.slide__image | img_url : 'master' }}" alt="" width="" height="" loading="eager"></div>
     {% endif %}
     {% endfor %}
   </div>
@@ -45,7 +45,7 @@
             "default": true
           },
           {
-            "type": "url",
+            "type": "text",
             "id": "slide__url",
             "label": "遷移先URL"
           }
