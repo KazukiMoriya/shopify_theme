@@ -40,9 +40,7 @@
     "91cb15f5-6bc9-4122-9f93-32d78728f317": {
       "type": "feature",
       "settings": {
-        "title": "見出し見出し",
-        "read": "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト",
-        "image1": "shopify:\/\/shop_images\/shellfish-pasta-pizza-and-italian-food.jpg"
+        "feature__heading": "お弁当の特徴"
       }
     }
   },
