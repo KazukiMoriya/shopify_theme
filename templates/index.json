@@ -39,6 +39,19 @@
     },
     "91cb15f5-6bc9-4122-9f93-32d78728f317": {
       "type": "feature",
+      "blocks": {
+        "0858d461-f9cf-417f-b219-0949ac268993": {
+          "type": "feature__item",
+          "settings": {
+            "feature__itemTitle": "タイトル１タイトル１タイトル１",
+            "feature__itemText": "<p>テキストテキストテキストテキスト<br\/>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<\/p>",
+            "feature__itemImage": "shopify:\/\/shop_images\/AdobeStock_386990909_Preview.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0858d461-f9cf-417f-b219-0949ac268993"
+      ],
       "settings": {
         "feature__heading": "お弁当の特徴"
       }
