@@ -33,12 +33,22 @@
 }
 
 .feature__description{
-  width: calc(100% - 240px);
+  width: calc(90% - 380px);
   border: 1px solid $black;
   border-radius: 5px;
 }
 
+.feature__itemTitle{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.feature__itemText{
+  line-height: 1.65;
+}
+
 .feature__imageWrap{
-  width: 240px;
+  width: 380px;
   border: 1px solid $black;
 }
+
