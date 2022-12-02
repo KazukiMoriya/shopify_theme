@@ -1,6 +1,11 @@
 @use "./variable" as *;
 @use "./mixin" as *;
 
+.header-wrapper{
+  width: 100%;
+  position: fixed;
+}
+
 .l-header{
   @include pc{
     padding: 20px 0;
