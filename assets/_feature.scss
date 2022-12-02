@@ -38,7 +38,7 @@
   &:not(:nth-child(2n)){
     .feature__description{
       box-shadow: 3px 3px 5px rgba($color: #a7d28d, $alpha: 0.65);
-      background-color: #dbebc4;
+      background-color: rgba($color: #dbebc4, $alpha: 0.4);
     }
   }
 }
