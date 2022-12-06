@@ -1,2 +1,24 @@
 @use "./variable" as *;
 @use "./mixin" as *;
+.company-section{
+  padding: 40px 0;
+}
+
+.company-section__inner{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.company-section__heading{
+  position: relative;
+  &:before{
+    content: "";
+    width: 4px;
+    height: 1em;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border: 1px solid $black;
+  }
+}
