@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link href="{{'_common.css' | asset_url }}" rel="stylesheet">
+    {% if template == "company" %}
+    <link href="{{'_company.css' | asset_url }}" rel="stylesheet">
+    {% endif %}
     {%- if template == 'index' -%}
       <link href="{{'swiper-bundle.min.css' | asset_url }}" rel="stylesheet">
     {%- endif -%}
