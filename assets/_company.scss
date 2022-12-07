@@ -37,9 +37,11 @@
 
 .company-section__itemTitle{
   width: 200px;
+  padding: 6px 10px;
 }
 
 .company-section__itemData{
   width: calc(100% - 200px);
+  padding: 6px 10px;
   border-left: 1px solid $black;
 }
