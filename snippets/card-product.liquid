@@ -409,7 +409,7 @@
             </div>
          
          <div style="padding-top: 1em;">
-           <input class="product-form__submit button button--full-width" type="submit" value="{% if product_card_product.variants.first.available %}Buy now{% else %}Sold Out{% endif%}" class="btn" {% unless product_card_product.variants.first.available %}disabled{% endunless %} />
+           <input class="product-form__submit button button--full-width" type="submit" value="{% if product_card_product.variants %}Buy now{% else %}Sold Out{% endif%}" class="btn" {% unless product_card_product.variants.first.available %}disabled{% endunless %} />
          </div>
        
        </form>
