@@ -37,11 +37,20 @@
 
 .company-section__itemTitle{
   width: 200px;
-  padding: 6px 10px;
+  padding: 10px;
 }
 
 .company-section__itemData{
   width: calc(100% - 200px);
-  padding: 6px 10px;
+  padding: 10px;
   border-left: 1px solid $black;
+}
+
+.company-section__subItem{
+  &:nth-child(n + 2){
+    margin-top: 20px;
+  }
+  &:before{
+    content: "・";
+  }
 }
