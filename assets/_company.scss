@@ -28,12 +28,18 @@
 }
 
 .company-section__item{
+  display: flex;
   line-height: 1.5;
   &:nth-child(n + 2){
     border-top: 1px solid $black;
   }
 }
 
+.company-section__itemTitle{
+  width: 200px;
+}
+
 .company-section__itemData{
+  width: calc(100% - 200px);
   border-left: 1px solid $black;
 }
