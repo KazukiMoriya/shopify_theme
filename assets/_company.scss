@@ -38,6 +38,8 @@
 .company-section__itemTitle{
   width: 200px;
   padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .company-section__itemData{
@@ -48,7 +50,7 @@
 
 .company-section__subItem{
   &:nth-child(n + 2){
-    margin-top: 20px;
+    margin-top: 10px;
   }
   &:before{
     content: "・";
