@@ -16,15 +16,15 @@
           "settings": {
             "slide__image": "shopify:\/\/shop_images\/AdobeStock_93195701_Preview_6a5fe790-e954-4372-bc40-8c58818696a6.jpg",
             "slide__anchor": true,
-            "slide__url": "https\/\/bwbfwbfw"
+            "slide__url": "https:\/\/ga6rm7he.myshopify.com\/products\/%E5%BC%81%E5%BD%93b"
           }
         },
         "88312c14-6160-4db6-a902-1be306fe588c": {
           "type": "slide",
           "settings": {
             "slide__image": "shopify:\/\/shop_images\/AdobeStock_39011229_Preview_7f4157c3-064d-4333-87bc-6c480ccf8601.jpg",
-            "slide__anchor": true,
-            "slide__url": "http\/\/abcdef"
+            "slide__anchor": false,
+            "slide__url": ""
           }
         }
       },
