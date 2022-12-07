@@ -21,3 +21,19 @@
     border: 1px solid $black;
   }
 }
+
+.company-section__list{
+  margin-top: 40px;
+  border: 1px solid $black;
+}
+
+.company-section__item{
+  line-height: 1.5;
+  &:nth-child(n + 2){
+    border-top: 1px solid $black;
+  }
+}
+
+.company-section__itemData{
+  border-left: 1px solid $black;
+}
