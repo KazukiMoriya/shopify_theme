@@ -317,31 +317,26 @@
       <form action="/cart/add" method="post">
         <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
           <div class="product-form__input product-form__quantity" style="padding-top: 0.5em;" >
-                       <quantity-input class="quantity">
-                         <button class="quantity__button no-js-hidden" name="minus" type="button">
-                          
-                           {% render 'icon-minus' %}
-                         </button>
-                         <input class="quantity__input"
-                             type="number"
-                             name="quantity"
-                             id="Quantity-{{ forloop.index }}"
-                             min="1"
-                             value="1"
-                            
-                           >
-                         <button class="quantity__button no-js-hidden" name="plus" type="button">
-                          
-                           {% render 'icon-plus' %}
-                         </button>
-                       </quantity-input>
-            </div>
-         
-         <div style="padding-top: 1em;">
-           <input class="product-form__submit button button--full-width" type="submit" value="{% if product.selected_or_first_available_variant.available %}Buy now{% else %}Sold Out{% endif%}" class="btn" {% unless product_card_product.variants.first.available %}disabled{% endunless %} />
-         </div>
-       
-       </form>
+            <quantity-input class="quantity">
+              <button class="quantity__button no-js-hidden" name="minus" type="button">
+              {% render 'icon-minus' %}
+              </button>
+              <input class="quantity__input"
+                type="number"
+                name="quantity"
+                id="Quantity-{{ forloop.index }}"
+                min="1"
+                value="1"
+              >
+              <button class="quantity__button no-js-hidden" name="plus" type="button">
+              {% render 'icon-plus' %}
+              </button>
+            </quantity-input>
+          </div>
+          <div style="padding-top: 1em;">
+            <input class="product-form__submit button button--full-width" type="submit" value="{% if product_card_product.variants.first.available %}Buy now{% else %}Sold Out{% endif %}" class="btn" {% unless product_card_product.variants.first.available %}disabled{% endunless %} />
+          </div>
+      </form>
 
     </div>
   </div>
