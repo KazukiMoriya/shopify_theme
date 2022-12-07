@@ -73,6 +73,9 @@
     &:nth-child(n + 2){
       margin-left: 30px;
     }
+    &:last-child{
+      margin-left: 20px;
+    }
   }
   @include spTab{
     width: 100%;
@@ -93,6 +96,10 @@
     padding: 20px 0;
     @include hover2;
   }
+}
+
+.l-header-nav__icon{
+  transform: translateY(-2px);
 }
 
 .l-header__hamburger{

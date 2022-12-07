@@ -566,7 +566,7 @@
           <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="{{ routes.root_url }}pages/company">運営会社</a></li>
           <li class="l-header-nav__item"><a class="l-header-nav__anchor" href="">お問い合わせ</a></li>
           <li class="l-header-nav__item">
-            <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+            <a href="{{ routes.cart_url }}" class="l-header-nav__icon header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
               {%- liquid
                 if cart == empty
                   render 'icon-cart-empty'
