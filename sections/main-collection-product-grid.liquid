@@ -1,3 +1,4 @@
+<script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
@@ -124,11 +125,28 @@
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
-                  <form id="form" method="post" action="/cart/add"> 
+                  {% comment %} <form id="form" method="post" action="/cart/add"> 
                     <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
                     <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}> 
                     <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
-                  </form>
+                  </form> {% endcomment %}
+
+
+                  <button
+                    type="button"
+                    class="button button--full-width button--secondary"
+                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }})"
+                    {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
+                  >
+                    <span>
+                      {% if product.selected_or_first_available_variant.available == false %}
+                        売り切れ
+                      {% else %}
+                        カートに追加
+                      {% endif %}
+                    </span>
+                  </button>
+
                 </li>
               {%- endfor -%}
             </ul>
