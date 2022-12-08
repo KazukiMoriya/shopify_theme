@@ -148,7 +148,7 @@
                   </button> {% endcomment %}
 
                   <form action="/cart/add" method="post">
-                    <input type="hidden" name="id" value="{{ product_card_product.variants.first.id }}" />
+                    <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
                     {% comment %} <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>  {% endcomment %}
                      
                      <div style="padding-top: 1em;">
