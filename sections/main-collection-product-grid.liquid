@@ -133,12 +133,12 @@
                     <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
                   </form> {% endcomment %}
 
-                  <input type="number" name="{{ product.selected_or_first_available_variant.id }}_pieces" min="1" max="10" value="1">
+                  <input class="product_pieces" id="{{ product.selected_or_first_available_variant.id }}_pieces" type="number" name="pieces" min="1" max="10" value="1">
 
                   <button
                     type="button"
                     class="button button--full-width button--secondary"
-                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }})"
+                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('.product_pieces').val())"
                     {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
                   >
                     {% if product.selected_or_first_available_variant.available == false %}
