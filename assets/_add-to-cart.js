@@ -23,5 +23,5 @@ function buttonClick(variantId){
 $(".button--full-width").on("click",function(){
   setTimeout(function(){
     location.reload();
-  },500);
+  },700);
 });
