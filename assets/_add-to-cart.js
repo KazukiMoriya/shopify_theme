@@ -19,3 +19,9 @@ function buttonClick(variantId){
     console.error("Error:", error)
   })
 }
+
+$(".button--full-width").on("click",function(){
+  setTimeout(function(){
+    location.reload();
+  },500);
+});
