@@ -3,7 +3,7 @@ function buttonClick(variantId){
     items: [
       {
         id: variantId,
-        quantity: 1,
+        quantity: 2,
       },
     ],
   };

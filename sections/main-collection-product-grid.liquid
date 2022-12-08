@@ -133,6 +133,7 @@
                     <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
                   </form> {% endcomment %}
 
+                  <input type="number" name="item_pieces" min="1" max="10" value="1">
 
                   <button
                     type="button"
