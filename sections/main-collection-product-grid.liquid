@@ -123,10 +123,10 @@
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
-                  <form method="post" action="/cart/add"> 
+                  <form id="form" method="post" action="/cart/add"> 
                     <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
                     <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}> 
-                    <button class="cart_button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
+                    <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
                   </form>
                 </li>
               {%- endfor -%}
@@ -141,6 +141,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  const submitButton = document.querySelector('#submit-button');
+  const form = document.querySelector('#form');
+  form.addEventListener('submit', (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    const formData = new formData(form);
+    const options = {
+      method: 'POST',
+      body: formData,
+    }
+    const url = form.getAttribute('action');
+    fetch(url, options);
+  });
+</script>
 
 
 {% schema %}
