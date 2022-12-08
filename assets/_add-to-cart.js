@@ -1,9 +1,9 @@
-function buttonClick(variantId,pieces){
+function buttonClick(variantId,quantity_num){
   let formData = {
     items: [
       {
         id: variantId,
-        quantity: pieces,
+        quantity: quantity_num,
       },
     ],
   };
