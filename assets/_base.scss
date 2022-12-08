@@ -24,12 +24,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0; 
 } 
 
-input{
-  &:disabled{
-    background-color: rgba($color: $black, $alpha: 0.3);
-  }
-}
-
 .is-hidePc{
   @include pc{
     display: none;
@@ -70,10 +64,16 @@ input{
   width: 30px;
   text-align: center;
   border: 1px solid rgba($color: $black, $alpha: 0.3);
+  &:disabled{
+    visibility: hidden;
+  }
 }
 
 .cart_button{
   width: calc(90% - 30px);
   text-align: center;
   border: 1px solid rgba($color: $black, $alpha: 0.3);
+  &:disabled{
+    background-color: rgba($color: $black, $alpha: 0.3);
+  }
 }
