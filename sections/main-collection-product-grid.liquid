@@ -138,7 +138,7 @@
                   <button
                     type="button"
                     class="button button--full-width button--secondary"
-                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('.product_pieces').val())"
+                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_pieces').val())"
                     {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
                   >
                     {% if product.selected_or_first_available_variant.available == false %}
