@@ -4,26 +4,7 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<script defer>
-  const form = document.getElementById("form")
-  const submitButton = document.getElementById("submit-button")
-  
-  submitButton.onclick = () => {
-    const formData = new FormData(form)
-    const action = form.getAttribute("action")
-    const options = {
-      method: 'POST',
-      body: formData,
-    }
-    fetch(action, options).then((e) => {
-      if(e.status === 200) {
-        alert("保存しました。")
-        return
-      }
-      alert("保存できませんでした。")
-    })
-  }
-</script>
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
 {%- if section.settings.enable_quick_add -%}
   <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
