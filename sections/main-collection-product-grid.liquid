@@ -138,13 +138,11 @@
                     onclick="buttonClick({{ product.selected_or_first_available_variant.id }})"
                     {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
                   >
-                    <span>
-                      {% if product.selected_or_first_available_variant.available == false %}
-                        売り切れ
-                      {% else %}
-                        カートに追加
-                      {% endif %}
-                    </span>
+                    {% if product.selected_or_first_available_variant.available == false %}
+                      売り切れ
+                    {% else %}
+                      カートに追加
+                    {% endif %}
                   </button>
 
                 </li>
