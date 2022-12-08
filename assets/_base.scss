@@ -18,6 +18,10 @@ img{
   object-fit: cover;
 }
 
+input[name="quantity"]:disabled{
+  background-color: rgba($color: $black, $alpha: 0.3);
+}
+
 .is-hidePc{
   @include pc{
     display: none;
@@ -53,3 +57,4 @@ img{
 .swiper-pagination-bullet-active{
   background-color: #ff8c00;
 }
+
