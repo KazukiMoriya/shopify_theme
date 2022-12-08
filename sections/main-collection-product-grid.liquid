@@ -137,7 +137,7 @@
                   <button
                     type="button"
                     class="button button--full-width button--secondary"
-                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }} window.location.reload(); )"
+                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }},window.location.reload())"
                     {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
                   >
                     {% if product.selected_or_first_available_variant.available == false %}
