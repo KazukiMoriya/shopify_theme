@@ -127,17 +127,17 @@
                   %}
 
 
-                  <form id="form" method="post" action="/cart/add"> 
+                  {% comment %} <form id="form" method="post" action="/cart/add"> 
                     <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
                     <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}> 
                     <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
-                  </form>
+                  </form> {% endcomment %}
 
 
-                  {% comment %} <button
+                  <button
                     type="button"
                     class="button button--full-width button--secondary"
-                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }})"
+                    onclick="buttonClick({{ product.selected_or_first_available_variant.id }} window.location.reload(); )"
                     {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
                   >
                     {% if product.selected_or_first_available_variant.available == false %}
@@ -145,7 +145,7 @@
                     {% else %}
                       カートに追加
                     {% endif %}
-                  </button> {% endcomment %}
+                  </button>
 
 
                 </li>
