@@ -123,7 +123,7 @@
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
-                  <form method="post" action="/cart/add" data-type="add-to-cart-form"> 
+                  <form method="post" action="/cart/add" data-type="add-to-cart-form" novalidate="novalidate" enctype="multipart/form-data" accept-charset="UTF-8"> 
                     <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
                     <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}> 
                     <button class="cart_button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
