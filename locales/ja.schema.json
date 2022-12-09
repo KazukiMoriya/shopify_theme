@@ -479,7 +479,7 @@
         "product": {
           "settings": {
             "product": {
-              "label": "商品一覧"
+              "label": "商品"
             },
             "secondary_background": {
               "label": "サブ背景を表示する"
@@ -488,7 +488,7 @@
               "label": "マウスオーバー時に2番目の画像を表示する"
             }
           },
-          "name": "商品一覧"
+          "name": "商品"
         },
         "collection": {
           "settings": {
@@ -2414,7 +2414,7 @@
       },
       "settings": {
         "product": {
-          "label": "商品一覧"
+          "label": "商品"
         },
         "secondary_background": {
           "label": "サブ背景を表示する"
