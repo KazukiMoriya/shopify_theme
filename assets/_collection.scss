@@ -92,6 +92,12 @@
   }
 }
 
+.collection-aside__details{
+  @include pcTab{
+    margin-right: unset !important;
+  }
+}
+
 .collection-aside__filters{
   @include pcTab{
     padding-left: 0 !important;
