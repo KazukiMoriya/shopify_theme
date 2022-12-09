@@ -9,9 +9,6 @@
   .page-width{
     padding: 0 !important;
   }
-  .facets__form{
-    gap: unset;
-  }
 }
 
 .collection__heading{
@@ -78,6 +75,11 @@
 
 .collection-aside__wrapper{
   display: unset !important;
+}
+
+.collection-aside__form{
+  display: unset !important;
+  gap: unset !important;
 }
 
 .collection-aside__sortWrap{
