@@ -44,7 +44,7 @@
               <div class="active-facets active-facets-desktop">
                 <div class="active-facets-vertical-filter">
                   {%- unless results.filters == empty -%}
-                    <h2 class="facets__heading facets__heading--vertical caption-large text-body" id="verticalTitle" tabindex="-1">{{ 'products.facets.filter_by_label' | t }}</h2>
+                    <h2 class="facets__heading facets__heading--vertical caption-large text-body collection-aside__label" id="verticalTitle" tabindex="-1">{{ 'products.facets.filter_by_label' | t }}</h2>
                   {%- endunless -%}
                   <facet-remove class="active-facets__button-wrapper">
                     <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
@@ -327,7 +327,7 @@
           {%- if enable_sorting -%}
             <div class="facet-filters sorting caption collection-aside__filters">
               <div class="facet-filters__field collection-aside__sortWrap">
-                <h2 class="facet-filters__label caption-large text-body">
+                <h2 class="facet-filters__label caption-large text-body collection-aside__label">
                   <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
                 </h2>
                 <div class="select">
@@ -379,7 +379,7 @@
         <form class="no-js">
           <div class="facet-filters sorting caption collection-aside__filters">
             <div class="facet-filters__field collection-aside__sortWrap">
-              <h2 class="facet-filters__label caption-large text-body">
+              <h2 class="facet-filters__label caption-large text-body collection-aside__label">
                 <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
               </h2>
               <div class="select">
@@ -438,7 +438,7 @@
           <div class="mobile-facets__inner gradient">
             <div class="mobile-facets__header">
               <div class="mobile-facets__header-inner">
-                <h2 class="mobile-facets__heading medium-hide large-up-hide">
+                <h2 class="mobile-facets__heading medium-hide large-up-hide ">
                   {%- if enable_filtering and enable_sorting -%}
                     {{ 'products.facets.filter_and_sort' | t }}
                   {%- elsif enable_filtering -%}
@@ -682,7 +682,7 @@
       <form id="FacetSortDrawerForm" class="facets__form">
         <div class="facet-filters sorting caption small-hide collection-aside__filters">
           <div class="facet-filters__field collection-aside__sortWrap">
-            <h2 class="facet-filters__label caption-large text-body">
+            <h2 class="facet-filters__label caption-large text-body collection-aside__label">
               <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
             </h2>
             <div class="select">
