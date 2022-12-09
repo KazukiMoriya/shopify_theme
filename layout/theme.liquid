@@ -269,6 +269,10 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
     {% section 'header' %}
+
+    {% if template == 'collection' %}
+      {% assign pageName = "collection" %}
+    {% endif %}
     <main id="MainContent" class="content-for-layout focus-none {{pageName}}" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
