@@ -1,4 +1,3 @@
-{% assign pageName = "product-archive" %}
 <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
@@ -15,7 +14,7 @@
 {%- endif -%}
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- style -%}
+{% comment %} {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -27,7 +26,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-{%- endstyle -%}
+{%- endstyle -%} {% endcomment %}
 
 <div class="section-{{ section.id }}-padding">
   {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
