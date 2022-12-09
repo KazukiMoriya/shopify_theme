@@ -2414,7 +2414,7 @@
       },
       "settings": {
         "product": {
-          "label": "商品"
+          "label": "商品一覧"
         },
         "secondary_background": {
           "label": "サブ背景を表示する"
