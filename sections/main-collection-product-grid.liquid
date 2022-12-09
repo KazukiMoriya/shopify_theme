@@ -115,7 +115,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                <li class="grid__item product__item">
+                <li class="grid__item product__item collection__item">
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
@@ -127,17 +127,16 @@
                     section_id: section.id
                   %}
 
-
                   {% comment %} <form id="form" method="post" action="/cart/add"> 
                     <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
                     <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}> 
                     <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
                   </form> {% endcomment %}
 
-                  <input class="product__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                  <input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
                   <button
                     type="button"
-                    class="button button--full-width button--secondary product__button"
+                    class="button button--full-width button--secondary product__button collection__button js-reload"
                     onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())"
                     {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
                   >
@@ -147,8 +146,6 @@
                       カートに追加
                     {% endif %}
                   </button>
-
-
                 </li>
               {%- endfor -%}
             </ul>

@@ -20,7 +20,7 @@ function buttonClick(variantId,quantity_num){
   })
 }
 
-$(".button--full-width").on("click",function(){
+$(".js-reload").on("click",function(){
   setTimeout(function(){
     location.reload();
   },700);
