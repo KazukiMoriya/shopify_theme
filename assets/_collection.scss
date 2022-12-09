@@ -74,14 +74,26 @@
 }
 
 .collection-aside__wrapper{
-  display: unset !important;
+  @include pcTab{
+    display: unset !important;
+  }
 }
 
 .collection-aside__form{
-  display: unset !important;
-  gap: unset !important;
+  @include pcTab{
+    display: unset !important;
+    gap: unset !important;
+  }
 }
 
 .collection-aside__sortWrap{
-  display: unset !important;
+  @include pcTab{
+    display: unset !important;
+  }
+}
+
+.collection-aside__filters{
+  @include pcTab{
+    padding-left: 0 !important;
+  }
 }
