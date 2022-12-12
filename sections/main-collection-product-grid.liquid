@@ -146,6 +146,7 @@
                       カートに追加
                     {% endif %}
                   </button>
+                  <div class="rank-badge {% if section.settings.ranking == 'square' %}square {% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
                 </li>
               {%- endfor -%}
             </ul>
