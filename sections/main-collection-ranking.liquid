@@ -1,12 +1,261 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .rank-badge {
+    position: absolute;
+    top: 0;
+    left: 1rem;  
   }
+  
+  .rank-badge.square {
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    padding-top: 1px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #000;
+  }
+  
+   .rank-badge.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #dcdcdc transparent transparent transparent;
+  }
+  
+  .rank-badge.triangle span {
+    position: absolute;
+    top: -55px;
+    left: 10px;
+    color: #fff;
+    padding-top: 1px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .product-grid li:nth-child(n+4) {
+      width: 25%;
+    }
+  }
+  
+
+  
+  @media screen and (max-width: 749px) {
+    .rank-badge {
+      top: 0rem;
+      left: 0.5rem;
+    }
+    
+    .product-grid li:nth-child(n+4) {
+      width: 50%;
+    }   
+  }
+</style>
+
+<link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+  {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+  <div class="page-width" id="main-collection-filters" data-id="{{ section.id }}">
+    {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
+  </div>
+{%- endif -%}
+
+<div id="ProductGridContainer">
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    {%- if collection.products.size == 0 -%}
+      <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+        <div class="loading-overlay gradient"></div>
+        <div class="title-wrapper center">
+          <h2 class="title title--primary">ra
+            {{ 'sections.collection_template.empty' | t }}<br>
+            {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+          </h2>
+        </div>
+      </div>
+    {%- else -%}
+      <div class="collection page-width">
+        <div class="loading-overlay gradient"></div>
+
+        <ul id="product-grid" data-id="{{ section.id }}" class="
+          grid grid--1-col negative-margin product-grid
+          {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %}
+            {% if collection.products_count == 4 %} grid--3-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max{% endif %}
+          {% endif %}">
+          {%- for product in collection.products -%}
+            <li class="grid__item js-rank-grid" style="position: relative;">
+              {% render 'product-card',
+                product_card_product: product,
+                media_size: section.settings.image_ratio,
+                show_secondary_image: section.settings.show_secondary_image,
+                add_image_padding: section.settings.add_image_padding,
+                show_vendor: section.settings.show_vendor,
+                show_image_outline: section.settings.show_image_outline,
+                show_rating: section.settings.show_rating
+              %}
+              <div class="rank-badge {% if section.settings.ranking == 'square' %}square {% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate, anchor: '' %}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "spaced-section collection-grid-section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 3,
+      "max": 15,
+      "step": 1,
+      "default": 11,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_image_padding",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.add_image_padding.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image_outline",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.show_image_outline.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_on_larger_devices",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
+    },
+   {
+      "type": "select",
+      "id": "ranking",
+      "options": [
+        {
+          "value": "square",
+          "label": "四角"
+        },
+        {
+          "value": "triangle",
+          "label": "三角"
+        }
+      ],
+      "default": "square",
+      "label": "バッジシェイプ"
+    },
+    {
+            "type": "color",
+            "id": "color_num",
+            "label": "文字カラー",
+            "default": "#fff "
+    },
+    {
+            "type": "color",
+            "id": "color_badgebk1",
+            "label": "バッジ背景カラー No.1",
+            "default": "#cdab80 "
+    },
+    {
+            "type": "color",
+            "id": "color_badgebk2",
+            "label": "バッジ背景カラー No.2",
+            "default": "#F3FFD8 "
+    },
+    {
+            "type": "color",
+            "id": "color_badgebk3",
+            "label": "バッジ背景カラー No.3",
+            "default": "#DCC2FF "
+    },
+    {
+            "type": "color",
+            "id": "color_badgebk4",
+            "label": "バッジ背景カラー No.4以降",
+            "default": "#dcdcdc "
+    }
+  ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
