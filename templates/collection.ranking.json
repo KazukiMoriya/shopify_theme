@@ -9,19 +9,15 @@
       }
     },
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "main-collection-ranking",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
+        "products_per_page": 10,
         "image_ratio": "adapt",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_filtering": true,
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "enable_sorting": true
       }
     }
   },
