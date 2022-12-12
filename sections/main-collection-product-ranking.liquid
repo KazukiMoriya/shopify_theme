@@ -1,3 +1,69 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .rank-badge {
+    position: absolute;
+    top: 0;
+    left: 1rem;  
+  }
+  
+  .rank-badge.square {
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    padding-top: 1px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #000;
+  }
+  
+   .rank-badge.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #dcdcdc transparent transparent transparent;
+  }
+  
+  .rank-badge.triangle span {
+    position: absolute;
+    top: -55px;
+    left: 10px;
+    color: #fff;
+    padding-top: 1px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .product-grid li:nth-child(n+4) {
+      width: 25%;
+    }
+  }
+  
+
+  
+  @media screen and (max-width: 749px) {
+    .rank-badge {
+      top: 0rem;
+      left: 0.5rem;
+    }
+    
+    .product-grid li:nth-child(n+4) {
+      width: 50%;
+    }   
+  }
+</style>
+
+<link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
   {{ 'component-facets.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
