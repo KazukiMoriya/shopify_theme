@@ -97,13 +97,14 @@
           {%- for product in collection.products -%}
             <li class="grid__item js-rank-grid" style="position: relative;">
               {% render 'card-product',
-                product_card_product: product,
-                media_size: section.settings.image_ratio,
-                show_secondary_image: section.settings.show_secondary_image,
-                add_image_padding: section.settings.add_image_padding,
-                show_vendor: section.settings.show_vendor,
-                show_image_outline: section.settings.show_image_outline,
-                show_rating: section.settings.show_rating
+                    card_product: product,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    show_secondary_image: section.settings.show_secondary_image,
+                    show_vendor: section.settings.show_vendor,
+                    show_rating: section.settings.show_rating,
+                    lazy_load: lazy_load,
+                    show_quick_add: section.settings.enable_quick_add,
+                    section_id: section.id
               %}
               <div class="rank-badge {% if section.settings.ranking == 'square' %}square {% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
             </li>
