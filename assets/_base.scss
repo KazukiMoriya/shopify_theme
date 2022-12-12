@@ -1,6 +1,7 @@
 @use "./variable" as *;
 @use "./mixin" as *;
 body{
+  font-size: 16px;
   font-family: 'Noto Sans JP', sans-serif;
   color: $black;
   display: flex;
