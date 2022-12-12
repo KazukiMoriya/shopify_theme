@@ -2,8 +2,9 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+<!--
 {{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
-
+-->
 <style>
   .rank-badge {
     position: absolute;
@@ -73,16 +74,16 @@
     {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
   </div>
 {%- endif -%}
-
 -->
 
 <div id="ProductGridContainer">
   {%- paginate collection.products by section.settings.products_per_page -%}
+
     {%- if collection.products.size == 0 -%}
       <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
         <div class="loading-overlay gradient"></div>
         <div class="title-wrapper center">
-          <h2 class="title title--primary">ra
+          <h2 class="title title--primary">
             {{ 'sections.collection_template.empty' | t }}<br>
             {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
           </h2>
@@ -91,12 +92,7 @@
     {%- else -%}
       <div class="collection page-width">
         <div class="loading-overlay gradient"></div>
-
-        <ul id="product-grid" data-id="{{ section.id }}" class="
-          grid grid--1-col negative-margin product-grid
-          {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %}
-            {% if collection.products_count == 4 %} grid--3-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max{% endif %}
-          {% endif %}">
+        <ul id="product-grid" data-id="{{ section.id }}" class="grid grid--1-col negative-margin product-grid {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %} {% if collection.products_count == 4 %} grid--3-col-desktop {% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max {% endif %} {% endif %}">
           {%- for product in collection.products -%}
             {% assign lazy_load = false %}
             {%- if forloop.index > 2 -%}
@@ -113,7 +109,7 @@
                 show_quick_add: section.settings.enable_quick_add,
                 section_id: section.id
               %}
-              <div class="rank-badge {% if section.settings.ranking == 'square' %}square {% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
+              <div class="rank-badge {% if section.settings.ranking == 'square' %}square{% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
             </li>
           {%- endfor -%}
         </ul>
@@ -123,6 +119,7 @@
         {%- endif -%}
       </div>
     {%- endif -%}
+
   {%- endpaginate -%}
 </div>
 
