@@ -96,6 +96,7 @@
           {% endif %}">
           {%- for product in collection.products -%}
             <li class="grid__item js-rank-grid" style="position: relative;">
+              <!--
               {% render 'product-card',
                 product_card_product: product,
                 media_size: section.settings.image_ratio,
@@ -105,6 +106,7 @@
                 show_image_outline: section.settings.show_image_outline,
                 show_rating: section.settings.show_rating
               %}
+              -->
               <div class="rank-badge {% if section.settings.ranking == 'square' %}square {% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
             </li>
           {%- endfor -%}
