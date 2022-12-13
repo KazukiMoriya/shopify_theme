@@ -42,6 +42,12 @@
   height: 85%;
 }
 
+.collection__quantityWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .collection__quantity {
   text-align: center;
   border: 1px solid rgba(51, 51, 51, 0.3);
@@ -60,6 +66,12 @@
     width: 30px;
     height: 30px;
   }
+}
+
+.collection__buttonWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .collection__button {
