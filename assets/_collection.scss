@@ -11,6 +11,12 @@
   }
 }
 
+.collection__inner{
+  max-width: 1200px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+}
+
 .collection__heading{
   position: relative;
   &:before{
