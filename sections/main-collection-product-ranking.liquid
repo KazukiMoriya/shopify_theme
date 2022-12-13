@@ -2,6 +2,7 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ "_collection.css" | asset_url | stylesheet_tag }}
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
@@ -102,7 +103,7 @@
     {%- else -%}
       <div class="collection page-width">
         <div class="loading-overlay gradient"></div>
-        <ul id="product-grid" data-id="{{ section.id }}" class="">
+        <ul id="collection__item product-grid" data-id="{{ section.id }}" class="">
           {%- for product in collection.products -%}
             <li class="collection__item  js-rank-grid" style="position: relative;">
               {% render 'card-product',

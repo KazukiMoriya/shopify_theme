@@ -24,8 +24,17 @@
   }
 }
 
+.collection__list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .collection__item{
+  width: calc(100% / 3);
   position: relative;
+  &:nth-child(n + 4){
+    width: calc(100% / 4);
+  }
   .full-unstyled-link{
     &:after{
       height: 85%;
