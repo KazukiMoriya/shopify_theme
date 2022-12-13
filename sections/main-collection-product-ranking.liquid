@@ -103,7 +103,7 @@
     {%- else -%}
       <div class="collection page-width">
         <div class="loading-overlay gradient"></div>
-        <ul id="collection__list product-grid" data-id="{{ section.id }}" class="">
+        <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
           {%- for product in collection.products -%}
             <li class="collection__item  js-rank-grid" style="position: relative;">
               {% render 'card-product',
