@@ -116,7 +116,7 @@
                 section_id: section.id
               %}
               <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
-              <div class="collection__butoonWrap">
+              <div class="collection__buttonWrap">
                 <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
                   {% if product.selected_or_first_available_variant.available == false %}
                     売り切れ
