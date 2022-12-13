@@ -69,6 +69,10 @@
   &:disabled{
     visibility: hidden;
   }
+  &:focus{
+    outline: 0;
+    box-shadow: none;
+  }
   @include pcTab{
     height: 40px;
   }
