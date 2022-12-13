@@ -100,7 +100,7 @@
       </div>
 
     {%- else -%}
-      <div class="collection page-width">
+      <div class="collection">
         <div class="loading-overlay gradient"></div>
         <ul id="product-grid" data-id="{{ section.id }}" class="grid grid--1-col negative-margin product-grid {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %} {% if collection.products_count == 4 %} grid--3-col-desktop {% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max {% endif %} {% endif %}">
           {%- for product in collection.products -%}
@@ -120,12 +120,7 @@
                 section_id: section.id
               %}
               <input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-              <button
-                type="button"
-                class="button button--full-width button--secondary product__button collection__button js-reload"
-                onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())"
-                {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}
-              >
+              <button type="button" class="button button--full-width button--secondary product__button collection__button js-reload" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
                 {% if product.selected_or_first_available_variant.available == false %}
                   売り切れ
                 {% else %}
@@ -159,6 +154,15 @@
       "step": 1,
       "default": 11,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
     },
     {
       "type": "header",
