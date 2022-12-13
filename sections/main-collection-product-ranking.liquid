@@ -102,9 +102,9 @@
     {%- else -%}
       <div class="collection page-width">
         <div class="loading-overlay gradient"></div>
-        <ul id="product-grid" data-id="{{ section.id }}" class="grid grid--1-col ">
+        <ul id="product-grid" data-id="{{ section.id }}" class="">
           {%- for product in collection.products -%}
-            <li class="collection__item grid__item js-rank-grid" style="position: relative;">
+            <li class="collection__item  js-rank-grid" style="position: relative;">
               {% render 'card-product',
                 card_product: product,
                 media_aspect_ratio: section.settings.image_ratio,
