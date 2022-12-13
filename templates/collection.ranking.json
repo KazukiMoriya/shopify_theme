@@ -13,19 +13,12 @@
       "settings": {
         "products_per_page": 11,
         "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_image_outline": true,
         "show_vendor": false,
         "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "collapse_on_larger_devices": false,
-        "ranking": "square",
         "color_num": "#ffffff",
         "color_badgebk1": "#cebd5d",
         "color_badgebk2": "#bebebe",
-        "color_badgebk3": "#eca413",
+        "color_badgebk3": "#ca590d",
         "color_badgebk4": "#000000"
       }
     }
