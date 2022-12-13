@@ -28,7 +28,7 @@
     background-color: #000;
   }
   
-   .rank-badge.triangle {
+  .rank-badge.triangle {
     width: 0;
     height: 0;
     border-style: solid;
@@ -114,7 +114,7 @@
                 show_quick_add: section.settings.enable_quick_add,
                 section_id: section.id
               %}
-              <div class="rank-badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}">{{ forloop.index }}</div>
+              <div class="rank-badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
             </li>
           {%- endfor -%}
         </ul>
