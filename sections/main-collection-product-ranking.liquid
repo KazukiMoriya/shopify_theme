@@ -109,7 +109,7 @@
                 show_quick_add: section.settings.enable_quick_add,
                 section_id: section.id
               %}
-              <div class="rank-badge {% if section.settings.ranking == 'square' %}square{% else %}triangle{% endif %}" style="background-color: {{ section.settings.color_badgebk1 }}">{{ forloop.index }}</div>
+              <div class="rank-badge {% if section.settings.ranking == 'square' %}square{% else %}triangle{% endif %}" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% endif %}">{{ forloop.index }}</div>
             </li>
           {%- endfor -%}
         </ul>
