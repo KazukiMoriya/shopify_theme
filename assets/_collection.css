@@ -55,6 +55,9 @@
           justify-content: space-between;
 }
 
+.collection__quantityWrap {
+  text-align: center;
+}
 @media screen and (min-width: 769px) {
   .collection__quantityWrap {
     width: 40px;
