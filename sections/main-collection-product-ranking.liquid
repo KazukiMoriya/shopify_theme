@@ -116,13 +116,15 @@
                 section_id: section.id
               %}
               <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
-              <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-                {% if product.selected_or_first_available_variant.available == false %}
-                  売り切れ
-                {% else %}
-                  カートに追加
-                {% endif %}
-              </button>
+              <div class="collection__butoonWrap">
+                <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                  {% if product.selected_or_first_available_variant.available == false %}
+                    売り切れ
+                  {% else %}
+                    カートに追加
+                  {% endif %}
+                </button>
+              </div>
               <div class="rank-badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
             </li>
           {%- endfor -%}
