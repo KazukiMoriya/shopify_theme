@@ -113,6 +113,9 @@
           justify-content: center;
   border: 1px solid rgba(51, 51, 51, 0.3);
 }
+.collection__button:not(:disabled):hover {
+  opacity: 0.7;
+}
 .collection__button:disabled {
   cursor: not-allowed;
   background-color: rgba(51, 51, 51, 0.3);
