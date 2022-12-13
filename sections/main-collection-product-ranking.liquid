@@ -31,7 +31,7 @@
     text-align: center;
     background-color: #000;
   }
-  
+
   .rank-badge.triangle {
     width: 0;
     height: 0;
@@ -108,7 +108,7 @@
             {%- if forloop.index > 2 -%}
               {%- assign lazy_load = true -%}
             {%- endif -%}
-            <li class="grid__item js-rank-grid" style="position: relative;">
+            <li class="collection__item grid__item js-rank-grid" style="position: relative;">
               {% render 'card-product',
                 card_product: product,
                 media_aspect_ratio: section.settings.image_ratio,
