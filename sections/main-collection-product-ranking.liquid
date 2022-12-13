@@ -102,7 +102,7 @@
     {%- else -%}
       <div class="collection page-width">
         <div class="loading-overlay gradient"></div>
-        <ul id="product-grid" data-id="{{ section.id }}" class="grid grid--1-col negative-margin product-grid {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %} {% if collection.products_count == 4 %} grid--3-col-desktop {% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max {% endif %} {% endif %}">
+        <ul id="product-grid" data-id="{{ section.id }}" class="grid grid--1-col ">
           {%- for product in collection.products -%}
             <li class="collection__item grid__item js-rank-grid" style="position: relative;">
               {% render 'card-product',
