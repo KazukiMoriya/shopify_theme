@@ -109,7 +109,7 @@
                 show_quick_add: section.settings.enable_quick_add,
                 section_id: section.id
               %}
-              <div class="rank-badge {% if section.settings.ranking == 'square' %}square{% else %}triangle{% endif %}"><span>{{ forloop.index }}</span></div>
+              <div class="rank-badge {% if section.settings.ranking == 'square' %}square{% else %}triangle{% endif %}" style="background-color: {{section.setting.color_badgebk1}}">{{ forloop.index }}</div>
             </li>
           {%- endfor -%}
         </ul>
@@ -220,34 +220,34 @@
       "label": "バッジシェイプ"
     },
     {
-            "type": "color",
-            "id": "color_num",
-            "label": "文字カラー",
-            "default": "#fff "
+      "type": "color",
+      "id": "color_num",
+      "label": "文字カラー",
+      "default": "#fff "
     },
     {
-            "type": "color",
-            "id": "color_badgebk1",
-            "label": "バッジ背景カラー No.1",
-            "default": "#cdab80 "
+      "type": "color",
+      "id": "color_badgebk1",
+      "label": "バッジ背景カラー No.1",
+      "default": "#cdab80 "
     },
     {
-            "type": "color",
-            "id": "color_badgebk2",
-            "label": "バッジ背景カラー No.2",
-            "default": "#F3FFD8 "
+      "type": "color",
+      "id": "color_badgebk2",
+      "label": "バッジ背景カラー No.2",
+      "default": "#F3FFD8 "
     },
     {
-            "type": "color",
-            "id": "color_badgebk3",
-            "label": "バッジ背景カラー No.3",
-            "default": "#DCC2FF "
+      "type": "color",
+      "id": "color_badgebk3",
+      "label": "バッジ背景カラー No.3",
+      "default": "#DCC2FF "
     },
     {
-            "type": "color",
-            "id": "color_badgebk4",
-            "label": "バッジ背景カラー No.4以降",
-            "default": "#dcdcdc "
+      "type": "color",
+      "id": "color_badgebk4",
+      "label": "バッジ背景カラー No.4以降",
+      "default": "#dcdcdc "
     }
   ]
 }
