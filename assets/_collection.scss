@@ -31,6 +31,7 @@
 
 .collection__item{
   width: calc(100% / 3);
+  height: 100%;
   position: relative;
   &:nth-child(n + 4){
     width: calc(100% / 4);

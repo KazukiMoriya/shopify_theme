@@ -33,6 +33,7 @@
 
 .collection__item {
   width: 33.3333333333%;
+  height: 100%;
   position: relative;
 }
 .collection__item:nth-child(n+4) {
