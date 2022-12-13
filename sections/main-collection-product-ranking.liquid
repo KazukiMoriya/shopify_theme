@@ -9,67 +9,6 @@
 <!--
 {{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
 -->
-<style>
-  .rank-badge {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 1rem;  
-  }
-  
-  .rank-badge.square {
-    width: 45px;
-    height: 45px;
-    color: #fff;
-    padding-top: 1px;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-    background-color: #000;
-  }
-
-  .rank-badge.triangle {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 50px 50px 0 0;
-    border-color: #dcdcdc transparent transparent transparent;
-  }
-  
-  .rank-badge.triangle span {
-    position: absolute;
-    top: -55px;
-    left: 10px;
-    color: #fff;
-    padding-top: 1px;
-    font-size: 22px;
-    font-weight: 600;
-  }
-  
-  @media screen and (min-width: 750px) {
-    .product-grid li:nth-child(n+4) {
-      width: 25%;
-    }
-  }
-  
-
-  
-  @media screen and (max-width: 749px) {
-    .rank-badge {
-      top: 0rem;
-      left: 0.5rem;
-    }
-    
-    .product-grid li:nth-child(n+4) {
-      width: 50%;
-    }   
-  }
-</style>
-
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
@@ -104,37 +43,37 @@
         <div class="loading-overlay gradient"></div>
         <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
           {%- for product in collection.products -%}
-            <li class="collection__item js-rank-grid">
-              {% render 'card-product',
-                card_product: product,
-                media_aspect_ratio: section.settings.image_ratio,
-                show_secondary_image: section.settings.show_secondary_image,
-                show_vendor: section.settings.show_vendor,
-                show_rating: section.settings.show_rating,
-                lazy_load: true,
-                show_quick_add: section.settings.enable_quick_add,
-                section_id: section.id
-              %}
-              <div class="collection__option">
-                <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
-                <div class="collection__buttonWrap">
-                  <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-                    {% if product.selected_or_first_available_variant.available == false %}
-                      売り切れ
-                    {% else %}
-                      カートに追加
-                    {% endif %}
-                  </button>
-                </div>
+          <li class="collection__item js-rank-grid">
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              lazy_load: true,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
+            %}
+            <div class="collection__option">
+              <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
+              <div class="collection__buttonWrap">
+                <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                  {% if product.selected_or_first_available_variant.available == false %}
+                    売り切れ
+                  {% else %}
+                    カートに追加
+                  {% endif %}
+                </button>
               </div>
-              <div class="collection__badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
-            </li>
+            </div>
+            <div class="collection__badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
+          </li>
           {%- endfor -%}
         </ul>
-
         {%- if paginate.pages > 1 -%}
           {% render 'pagination', paginate: paginate, anchor: '' %}
         {%- endif -%}
+
       </div>
 
     {%- endif -%}
