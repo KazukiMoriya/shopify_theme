@@ -69,15 +69,12 @@
   }
 }
 
-.collection__buttonWrap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
 .collection__button {
   width: calc(90% - 30px) !important;
   margin: 0 0 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   text-align: center;
   border: 1px solid rgba(51, 51, 51, 0.3);
 }
