@@ -127,7 +127,7 @@
                   </button>
                 </div>
               </div>
-              <div class="rank-badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
+              <div class="collection__badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
             </li>
           {%- endfor -%}
         </ul>

@@ -108,6 +108,17 @@
   }
 }
 
+.collection__badge {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 1rem;  
+}
+
 .collection-aside__wrapper{
   @include pcTab{
     display: unset !important;
