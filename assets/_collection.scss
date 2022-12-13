@@ -43,10 +43,13 @@
   }
 }
 
+.collection__option{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .collection__quantityWrap{
-  position: absolute;
-  bottom: 0;
-  left: 0;
   @include pcTab{
     width: 40px;
   }

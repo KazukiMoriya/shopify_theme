@@ -43,11 +43,18 @@
   height: 85%;
 }
 
-.collection__quantityWrap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.collection__option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 @media screen and (min-width: 769px) {
   .collection__quantityWrap {
     width: 40px;
