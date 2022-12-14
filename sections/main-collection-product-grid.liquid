@@ -65,7 +65,7 @@
           {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
         </aside>
         <!-- ※ 下記のclass名の collection を取ると検索機能しなくなる -->
-        <div class="collection__listWrap">
+        <div class="collection collection__listWrap">
           <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
             <li class="collection__item --all js-rank-grid">
