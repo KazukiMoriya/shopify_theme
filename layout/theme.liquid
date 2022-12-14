@@ -22,12 +22,6 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    {% if collection.handle == "ranking" %}
-      <link href="{{ 'component-card.css' | asset_url }}" rel="stylesheet">
-      <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
-      <script src="{{ 'cart.js' | asset_url }}" defer></script>
-    {% endif %}
-
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
