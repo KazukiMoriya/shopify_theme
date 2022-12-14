@@ -3,7 +3,7 @@
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
 {% assign pageName = collection %}
 
-<div class="section-{{ section.id }}-padding">
+<div class="collection__inner">
   {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
   <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
     <form class="facets-vertical-form" id="FacetSortForm">
@@ -67,7 +67,7 @@
       </div>
       <!-- 商品が1以上の時 -->
       {%- else -%}
-      <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" data-id="{{ section.id }}">
+      <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
         {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
       </aside>
       <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
@@ -90,7 +90,7 @@
         </li>
         {%- endfor -%}
       </ul>
-      
+
       {%- if paginate.pages > 1 -%}
         {% render 'pagination', paginate: paginate, anchor: '' %}
       {%- endif -%}
