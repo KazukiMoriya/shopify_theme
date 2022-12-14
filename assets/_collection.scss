@@ -36,12 +36,18 @@
 }
 
 .collection__item{
-  width: calc(100% / 3);
+  width: calc(98% / 3);
   height: 100%;
   margin: 10px 0 0 0;
   position: relative;
+  &:nth-child(n + 2){
+    margin-left: calc(100% / 2);
+  }
   &:nth-child(n + 4){
-    width: calc(100% / 4);
+    width: calc(98% / 4);
+  }
+  &:nth-child(n + 5){
+    margin-left: calc(2% / 3);
   }
   .full-unstyled-link{
     &:after{
