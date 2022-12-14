@@ -49,13 +49,7 @@
           </span>
         </h2>
         <div class="loading-overlay__spinner">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            class="spinner"
-            viewBox="0 0 66 66"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
             <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
           </svg>
         </div>
@@ -66,7 +60,6 @@
 
   <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
     <link href="{{ 'component-facets.css' | asset_url }}" rel="stylesheet">
-    {% comment %} {{ 'component-facets.css' | asset_url | stylesheet_tag }} {% endcomment %}
     <script src="{{ 'facets.js' | asset_url }}" defer></script>
     {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" data-id="{{ section.id }}">
