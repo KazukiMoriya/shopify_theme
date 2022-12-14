@@ -45,53 +45,53 @@
   </facet-filters-form>
   {%- endif -%}
 
-    {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-    <link href="{{ 'component-facets.css' | asset_url }}" rel="stylesheet">
-    <script src="{{ 'facets.js' | asset_url }}" defer></script>
-    {%- endif -%}
+  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+  <link href="{{ 'component-facets.css' | asset_url }}" rel="stylesheet">
+  <script src="{{ 'facets.js' | asset_url }}" defer></script>
+  {%- endif -%}
 
-    <div class="product-grid-container" id="ProductGridContainer">
-      {%- paginate collection.products by section.settings.products_per_page -%}  
-        {%- if collection.products.size == 0 -%}
-        <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-          <div class="title-wrapper center">
-            <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t }}<br>
-              {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
-            </h2>
-          </div>
-        </div>
-        <!-- 商品が1以上の時 -->
-        {%- else -%}
-        <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
-          {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
-        </aside>
-        <div class="">
-            <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
-              {%- for product in collection.products -%}
-              <li class="collection__item --all js-rank-grid">
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  lazy_load: true,
-                  show_quick_add: section.settings.enable_quick_add,
-                  section_id: section.id
-                %}
-                <div class="collection__option">
-                  <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
-                  <div class="collection__buttonWrap"><button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button></div>
-                </div>
-              </li>
-              {%- endfor -%}
-            </ul>
-            {%- if paginate.pages > 1 -%}{% render 'pagination', paginate: paginate, anchor: '' %}{%- endif -%}
-        </div>
-        {%- endif -%}
-      {%- endpaginate -%}
+  {%- paginate collection.products by section.settings.products_per_page -%}  
+    {%- if collection.products.size == 0 -%}
+    <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+      <div class="title-wrapper center">
+        <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t }}<br>
+          {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+        </h2>
+      </div>
     </div>
-  
+
+    {%- else -%}
+    <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
+      {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
+    </aside>
+    <div class="">
+      <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
+        {%- for product in collection.products -%}
+        <li class="collection__item --all js-rank-grid">
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: section.settings.image_ratio,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            lazy_load: true,
+            show_quick_add: section.settings.enable_quick_add,
+            section_id: section.id
+          %}
+          <div class="collection__option">
+            <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
+            <div class="collection__buttonWrap"><button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button></div>
+          </div>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <!-- ページネーション -->
+    {%- if paginate.pages > 1 -%}{% render 'pagination', paginate: paginate, anchor: '' %}{%- endif -%}
+    {%- endif -%}
+  {%- endpaginate -%}
+
+
 </div>
 
 {% schema %}
