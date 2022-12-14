@@ -66,7 +66,7 @@
         </div>
         <!-- 商品が1以上の時 -->
         {%- else -%}
-        <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" data-id="{{ section.id }}">
+        <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
           {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
         </aside>
         <div class="collection">
