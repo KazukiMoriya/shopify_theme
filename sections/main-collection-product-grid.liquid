@@ -2,14 +2,14 @@
 <link href="{{ 'component-loading-overlay.css' | asset_url }}" rel="stylesheet">
 <link href="{{ 'component-card.css' | asset_url }}" rel="stylesheet">
 <link href="{{ 'component-price.css' | asset_url }}" rel="stylesheet">
-<link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link href="{{ 'component-rte.css' | asset_url }}" rel="preload" as="style" onload="this.onload=null; this.rel='stylesheet'">
 <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart.js' | asset_url }}" defer></script>
 
 {%- if section.settings.enable_quick_add -%}
 <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
-<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'quick-add.js' | asset_url }}" defer></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer></script>
 {%- endif -%}
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -65,8 +65,9 @@
   {%- endif -%}
 
   <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
-    {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+    <link href="{{ 'component-facets.css' | asset_url }}" rel="stylesheet">
+    {% comment %} {{ 'component-facets.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    <script src="{{ 'facets.js' | asset_url }}" defer></script>
     {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" data-id="{{ section.id }}">
       {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
@@ -105,13 +106,7 @@
                 <div class="collection__option">
                   <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
                   <div class="collection__buttonWrap">
-                    <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
-                      {% if product.selected_or_first_available_variant.available == false %}
-                        売り切れ
-                      {% else %}
-                        カートに追加
-                      {% endif %}
-                    </button>
+                    <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button>
                   </div>
                 </div>
               </li>
