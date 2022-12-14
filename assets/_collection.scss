@@ -29,8 +29,12 @@
   }
 }
 
-.collection__list{
+.collection__listWrap{
   margin-top: 20px;
+  padding: 0;
+}
+
+.collection__list{
   display: flex;
   flex-wrap: wrap;
 }
