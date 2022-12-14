@@ -64,7 +64,7 @@
     <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
       {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
     </aside>
-    <div class="">
+    <div class="collection">
       <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
         {%- for product in collection.products -%}
         <li class="collection__item --all js-rank-grid">
