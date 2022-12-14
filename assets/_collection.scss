@@ -36,17 +36,15 @@
 }
 
 .collection__item{
-  width: calc(98% / 3);
   height: 100%;
-  margin: 10px 0 0 0;
   position: relative;
-  &:nth-child(n + 2){
-    margin-left: calc(2% / 2);
+  &:not(:nth-child(n + 4)){
+    width: calc(98% / 3);
   }
   &:nth-child(n + 4){
     width: calc(98% / 4);
   }
-  &:nth-child(n + 5){
+  &:not(:nth-child(4n + 4)){
     margin-left: calc(2% / 3);
   }
   .full-unstyled-link{
