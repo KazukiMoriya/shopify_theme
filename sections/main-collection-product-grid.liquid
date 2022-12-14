@@ -50,6 +50,7 @@
     <script src="{{ 'facets.js' | asset_url }}" defer></script>
     {%- endif -%}
 
+    <!-- ※ <div class="product-grid-container" id="ProductGridContainer"> を外すと検索機能しなくなる-->
     <div class="product-grid-container" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}  
         {%- if collection.products.size == 0 -%}
@@ -64,7 +65,7 @@
         <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
           {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
         </aside>
-        <!-- ※ class名の collection を外すと検索機能しなくなる -->
+        <!-- ※ <div class="collection"> を外すと検索機能しなくなる -->
         <div class="collection collection__listWrap">
           <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
