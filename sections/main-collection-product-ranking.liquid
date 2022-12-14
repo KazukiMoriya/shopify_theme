@@ -1,6 +1,7 @@
 <link href="{{ 'component-card.css' | asset_url }}" rel="stylesheet">
 <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
+{% assign pageName = collection %}
 
 <div id="ProductGridContainer">
   {%- paginate collection.products by section.settings.products_per_page -%}
