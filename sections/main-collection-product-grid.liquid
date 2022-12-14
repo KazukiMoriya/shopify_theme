@@ -1,8 +1,10 @@
+{% assign pageName = "company" %}
 <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
-<link href="{{ 'template-collection.css' | asset_url }}" rel="stylesheet">
-<link href="{{ 'component-loading-overlay.css' | asset_url }}" rel="stylesheet">
-<link href="{{ 'component-card.css' | asset_url }}" rel="stylesheet">
-<link href="{{ 'component-price.css' | asset_url }}" rel="stylesheet">
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 
@@ -13,8 +15,22 @@
 {%- endif -%}
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
+{% comment %} {%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%} {% endcomment %}
 
 <div class="section-{{ section.id }}-padding">
+  {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
   {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
     <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
       <form class="facets-vertical-form" id="FacetSortForm">
@@ -110,6 +126,12 @@
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
+
+                  {% comment %} <form id="form" method="post" action="/cart/add"> 
+                    <input type="hidden" name ="id" value="{{ product.variants.first.id }}"> 
+                    <input class="cart_num" id="quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}> 
+                    <button class="cart_button" id="submit-button" type="submit" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{%- if product.selected_or_first_available_variant.available -%}カートに入れる{%- else -%}売り切れ{%- endif -%}</button>
+                  </form> {% endcomment %}
 
                   <input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
                   <button
