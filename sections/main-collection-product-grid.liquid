@@ -52,10 +52,9 @@
   {%- endif -%}
 
   {%- paginate collection.products by section.settings.products_per_page -%}  
-    <!-- 商品0の時 -->
+
     {%- if collection.products.size == 0 -%}
     <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-      <div class="loading-overlay gradient"></div>
       <div class="title-wrapper center">
         <h2 class="title title--primary">
           {{ 'sections.collection_template.empty' | t }}<br>
@@ -63,7 +62,7 @@
         </h2>
       </div>
     </div>
-    <!-- 商品が1以上の時 -->
+
     {%- else -%}
     <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
       {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
