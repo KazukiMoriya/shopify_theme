@@ -1,8 +1,3 @@
-<link href="{{ 'component-card.css' | asset_url }}" rel="stylesheet">
-<script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-{% comment %} <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
-
 <div id="ProductGridContainer">
   {%- paginate collection.products by section.settings.products_per_page -%}
 
@@ -98,24 +93,6 @@
       "default": "adapt",
       "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
     },
-    //{
-    //  "type": "checkbox",
-    //  "id": "show_secondary_image",
-    //  "default": false,
-    //  "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
-    //},
-    //{
-    //  "type": "checkbox",
-    //  "id": "add_image_padding",
-    //  "default": false,
-    //  "label": "t:sections.main-collection-product-grid.settings.add_image_padding.label"
-    //},
-    //{
-    //  "type": "checkbox",
-    //  "id": "show_image_outline",
-    //  "default": true,
-    //  "label": "t:sections.main-collection-product-grid.settings.show_image_outline.label"
-    //},
     {
       "type": "checkbox",
       "id": "show_vendor",
@@ -129,45 +106,6 @@
       "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
       "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
     },
-    //{
-    //  "type": "header",
-    //  "content": "t:sections.main-collection-product-grid.settings.header__1.content"
-    //},
-    //{
-    //  "type": "checkbox",
-    //  "id": "enable_filtering",
-    //  "default": true,
-    //  "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
-    //  "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
-    //},
-    //{
-    //  "type": "checkbox",
-    //  "id": "enable_sorting",
-    //  "default": true,
-    //  "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
-    //},
-    //{
-    //  "type": "checkbox",
-    //  "id": "collapse_on_larger_devices",
-    //  "default": false,
-    //  "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
-    //},
-    //{
-    //  "type": "select",
-    //  "id": "ranking",
-    //  "options": [
-    //    {
-    //      "value": "square",
-    //      "label": "四角"
-    //    },
-    //    {
-    //      "value": "triangle",
-    //      "label": "三角"
-    //    }
-    //  ],
-    //  "default": "square",
-    //  "label": "バッジシェイプ"
-    //},
     {
       "type": "color",
       "id": "color_num",
