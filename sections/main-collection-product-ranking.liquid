@@ -3,8 +3,8 @@
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
 {% assign pageName = collection %}
 
-
-{%- paginate collection.products by section.settings.products_per_page -%}
+<div class="collection__inner">
+  {%- paginate collection.products by section.settings.products_per_page -%}
   <!-- 商品0の時 -->
   {%- if collection.products.size == 0 -%}
   <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
@@ -46,6 +46,7 @@
 
   {%- endif -%}
 {%- endpaginate -%}
+</div>
 
 {% schema %}
 {
