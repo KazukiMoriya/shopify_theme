@@ -1,7 +1,6 @@
 <link href="{{ 'component-card.css' | asset_url }}" rel="stylesheet">
 <script src="{{ '_add-to-cart.js' | asset_url }}" defer></script>
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
-{% assign pageName = collection %}
 
 <div class="collection__inner">
   {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
