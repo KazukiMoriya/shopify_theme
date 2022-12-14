@@ -1,4 +1,5 @@
 .collection-hero__inner {
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
 }
