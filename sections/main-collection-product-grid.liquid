@@ -88,7 +88,7 @@
           </div>
         </div>
         {%- else -%}
-        <div class="collection">
+        {% comment %} <div class="collection">
           <div class="collection__inner">
             <div class="loading-overlay gradient"></div>
             <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
@@ -123,10 +123,10 @@
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
           </div>
-        </div>
+        </div> {% endcomment %}
 
 
-        {% comment %} <div class="collection">
+        <div class="collection">
           <div class="loading-overlay gradient"></div>
           <ul id="product-grid" data-id="{{ section.id }}" class="grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop">
             {%- for product in collection.products -%}
@@ -156,7 +156,7 @@
           {%- if paginate.pages > 1 -%}
           {% render 'pagination', paginate: paginate, anchor: '' %}
           {%- endif -%}
-        </div> {% endcomment %}
+        </div>
         {%- endif -%}
       {%- endpaginate -%}
     </div>
