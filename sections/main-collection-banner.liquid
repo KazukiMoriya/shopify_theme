@@ -1,9 +1,9 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
-  <div class="">
+  <div class="collection__description">
     <h2 class="collection__heading">{{- collection.title | escape -}}</h2>
     {%- if section.settings.show_collection_description -%}
-    <div class="collection-hero__description rte">{{ collection.description }}</div>
+    <p class="collection__text">{{ collection.description }}</p>
     {%- endif -%}
   </div>
   {%- if section.settings.show_collection_image and collection.image -%}
