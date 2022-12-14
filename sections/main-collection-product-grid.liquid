@@ -52,12 +52,10 @@
 
     <div class="product-grid-container" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}  
-        <!-- 商品0の時 -->
         {%- if collection.products.size == 0 -%}
         <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
           <div class="title-wrapper center">
-            <h2 class="title title--primary">
-              {{ 'sections.collection_template.empty' | t }}<br>
+            <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t }}<br>
               {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
             </h2>
           </div>
@@ -68,8 +66,6 @@
           {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
         </aside>
         <div class="collection">
-          <div class="collection__inner">
-            <div class="loading-overlay gradient"></div>
             <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
               {%- for product in collection.products -%}
               <li class="collection__item --all js-rank-grid">
@@ -93,7 +89,6 @@
             {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
             {%- endif -%}
-          </div>
         </div>
         {%- endif -%}
       {%- endpaginate -%}
