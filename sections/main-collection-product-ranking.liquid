@@ -4,46 +4,41 @@
 
 <div class="collection__inner">
   {%- paginate collection.products by section.settings.products_per_page -%}
-
-  {%- if collection.products.size == 0 -%}
-  <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-    <div class="title-wrapper center">
-      <h2 class="title title--primary">
-        {{ 'sections.collection_template.empty' | t }}<br>
-        {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
-      </h2>
-    </div>
-  </div>
-
-  {%- else -%}
-  <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
-    {%- for product in collection.products -%}
-    <li class="collection__item --ranking js-rank-grid">
-      {% render 'card-product',
-        card_product: product,
-        media_aspect_ratio: section.settings.image_ratio,
-        show_secondary_image: section.settings.show_secondary_image,
-        show_vendor: section.settings.show_vendor,
-        show_rating: section.settings.show_rating,
-        lazy_load: true,
-        show_quick_add: section.settings.enable_quick_add,
-        section_id: section.id
-      %}
-      <div class="collection__option">
-        <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
-        <div class="collection__buttonWrap"><button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button></div>
+    {%- if collection.products.size == 0 -%}
+    <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+      <div class="title-wrapper center">
+        <h2 class="title title--primary">{{ 'sections.collection_template.empty' | t }}<br>
+          {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+        </h2>
       </div>
-      <div class="collection__badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
-    </li>
-    {%- endfor -%}
-  </ul>
-
-  {%- if paginate.pages > 1 -%}
-    {% render 'pagination', paginate: paginate, anchor: '' %}
-  {%- endif -%}
-
-  {%- endif -%}
-{%- endpaginate -%}
+    </div>
+    {%- else -%}
+    <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
+      {%- for product in collection.products -%}
+      <li class="collection__item --ranking js-rank-grid">
+        {% render 'card-product',
+          card_product: product,
+          media_aspect_ratio: section.settings.image_ratio,
+          show_secondary_image: section.settings.show_secondary_image,
+          show_vendor: section.settings.show_vendor,
+          show_rating: section.settings.show_rating,
+          lazy_load: true,
+          show_quick_add: section.settings.enable_quick_add,
+          section_id: section.id
+        %}
+        <div class="collection__option">
+          <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
+          <div class="collection__buttonWrap"><button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button></div>
+        </div>
+        <div class="collection__badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- if paginate.pages > 1 -%}
+      {% render 'pagination', paginate: paginate, anchor: '' %}
+    {%- endif -%}
+    {%- endif -%}
+  {%- endpaginate -%}
 </div>
 
 {% schema %}
