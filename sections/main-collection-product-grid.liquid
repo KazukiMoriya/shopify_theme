@@ -11,7 +11,7 @@
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+{% comment %} <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
 
 
 <div class="section-{{ section.id }}-padding">
