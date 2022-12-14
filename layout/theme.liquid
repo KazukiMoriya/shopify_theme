@@ -270,9 +270,7 @@
     {%- endif -%}
     {% section 'header' %}
 
-    {% if template == collection %}
-      {% assign pageName = "collection" %}
-    {% elsif collection.handle == "ranking" %}
+    {% if collection.handle == "all" or "ranking" %}
       {% assign pageName = "collection" %}
     {% endif %}
     <main id="MainContent" class="content-for-layout focus-none {{ pageName }}" role="main" tabindex="-1">
