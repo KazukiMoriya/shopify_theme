@@ -89,6 +89,44 @@
         </div>
         {%- else -%}
         <div class="collection">
+          <div class="collection__inner">
+            <div class="loading-overlay gradient"></div>
+            <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
+              {%- for product in collection.products -%}
+              <li class="collection__item js-rank-grid">
+                {% render 'card-product',
+                  card_product: product,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_vendor: section.settings.show_vendor,
+                  show_rating: section.settings.show_rating,
+                  lazy_load: true,
+                  show_quick_add: section.settings.enable_quick_add,
+                  section_id: section.id
+                %}
+                <div class="collection__option">
+                  <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
+                  <div class="collection__buttonWrap">
+                    <button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>
+                      {% if product.selected_or_first_available_variant.available == false %}
+                        売り切れ
+                      {% else %}
+                        カートに追加
+                      {% endif %}
+                    </button>
+                  </div>
+                </div>
+              </li>
+              {%- endfor -%}
+            </ul>
+            {%- if paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+          </div>
+        </div>
+
+
+        {% comment %} <div class="collection">
           <div class="loading-overlay gradient"></div>
           <ul id="product-grid" data-id="{{ section.id }}" class="grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop">
             {%- for product in collection.products -%}
@@ -118,7 +156,7 @@
           {%- if paginate.pages > 1 -%}
           {% render 'pagination', paginate: paginate, anchor: '' %}
           {%- endif -%}
-        </div>
+        </div> {% endcomment %}
         {%- endif -%}
       {%- endpaginate -%}
     </div>
