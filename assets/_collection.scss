@@ -44,8 +44,8 @@
   &:nth-child(n + 4){
     width: calc(98% / 4);
   }
-  &:not(:nth-child(4n + 4)){
-    margin-left: calc(2% / 3);
+  &:nth-child(n + 2):nth-child(-n + 3){
+    margin-left: calc(2% / 2);
   }
   .full-unstyled-link{
     &:after{
