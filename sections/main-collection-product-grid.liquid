@@ -64,6 +64,7 @@
         <aside class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} collection-aside" id="main-collection-filters" aria-labelledby="verticalTitle" data-id="{{ section.id }}">
           {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: section.settings.filter_type %}
         </aside>
+        <!-- ※ 下記のclass名の collection を取ると検索機能しなくなる -->
         <div class="collection collection__listWrap">
           <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
