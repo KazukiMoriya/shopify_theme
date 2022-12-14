@@ -46,7 +46,7 @@
   </facet-filters-form>
   {%- endif -%}
 
-  <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
+  <div class="aaa">
     {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     <link href="{{ 'component-facets.css' | asset_url }}" rel="stylesheet">
     <script src="{{ 'facets.js' | asset_url }}" defer></script>
@@ -93,7 +93,7 @@
         {%- if paginate.pages > 1 -%}
           {% render 'pagination', paginate: paginate, anchor: '' %}
         {%- endif -%}
-        
+
         {%- endif -%}
       {%- endpaginate -%}
     </div>
