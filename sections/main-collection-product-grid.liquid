@@ -91,7 +91,7 @@
             <div class="loading-overlay gradient"></div>
             <ul class="collection__list" id="product-grid" data-id="{{ section.id }}">
               {%- for product in collection.products -%}
-              <li class="collection__item --ranking js-rank-grid">
+              <li class="collection__item --all js-rank-grid">
                 {% render 'card-product',
                   card_product: product,
                   media_aspect_ratio: section.settings.image_ratio,
@@ -114,7 +114,6 @@
                     </button>
                   </div>
                 </div>
-                <div class="collection__badge" style="background-color: {% if forloop.index == 1 %} {{ section.settings.color_badgebk1 }} {% elsif forloop.index == 2 %} {{ section.settings.color_badgebk2 }} {% elsif forloop.index == 3 %} {{ section.settings.color_badgebk3 }} {% else %} {{ section.settings.color_badgebk4 }} {% endif %}; color: {{ section.settings.color_num }};">{{ forloop.index }}</div>
               </li>
               {%- endfor -%}
             </ul>
