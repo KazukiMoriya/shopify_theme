@@ -42,30 +42,41 @@
 .collection__item{
   height: 100%;
   position: relative;
-  &.--all{
-    width: calc(98% / 4);
-    &:not(:nth-child(4n + 1)){
-      margin: 10px 0 0 calc(2% / 3);
+  @include pcTab{
+    &.--all{
+      width: calc(98% / 4);
+      &:not(:nth-child(4n + 1)){
+        margin: 10px 0 0 calc(2% / 3);
+      }
+      &:nth-child(4n + 1){
+        margin-top: 10px;
+      }
     }
-    &:nth-child(4n + 1){
-      margin-top: 10px;
+    &.--ranking{
+      &:not(:nth-child(n + 4)){
+        width: calc(98% / 3);
+      }
+      &:nth-child(n + 4){
+        width: calc(97% / 4);
+      }
+      &:nth-child(n + 2):nth-child(-n + 3){
+        margin-left: calc(2% / 2);
+      }
+      &:nth-child(n + 5){
+        margin: 25px 0 0 calc(3% / 3);
+      }
+      &:nth-child(4n + 4){
+        margin: 25px 0 0 0;
+      }
     }
   }
-  &.--ranking{
-    &:not(:nth-child(n + 4)){
-      width: calc(98% / 3);
+  @include sp{
+    margin: calc(98% / 2);
+    &:nth-child(2n){
+      margin: 10px 0 0 2%;
     }
-    &:nth-child(n + 4){
-      width: calc(97% / 4);
-    }
-    &:nth-child(n + 2):nth-child(-n + 3){
-      margin-left: calc(2% / 2);
-    }
-    &:nth-child(n + 5){
-      margin: 25px 0 0 calc(3% / 3);
-    }
-    &:nth-child(4n + 4){
-      margin: 25px 0 0 0;
+    &:not(:nth-child(2n)){
+      margin-top: 10px;
     }
   }
   .full-unstyled-link{
