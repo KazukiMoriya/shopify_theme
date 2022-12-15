@@ -213,3 +213,13 @@
     margin: 0 !important;
   }
 }
+
+// card
+.card .badge{
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 0;
+}
