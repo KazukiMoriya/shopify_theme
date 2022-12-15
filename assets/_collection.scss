@@ -71,7 +71,7 @@
     }
   }
   @include sp{
-    margin: calc(98% / 2);
+    width: calc(98% / 2);
     &:nth-child(2n){
       margin: 10px 0 0 2%;
     }
