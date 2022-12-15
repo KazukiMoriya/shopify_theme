@@ -160,14 +160,21 @@
 }
 
 .collection__badge {
-  width: 30px;
-  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   top: 0;
-  left: 1rem;  
+  left: 1rem;
+  @include pcTab{
+    width: 30px;
+    height: 30px;
+  }
+  @include sp{
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+  }
 }
 
 .collection-aside__wrapper{
