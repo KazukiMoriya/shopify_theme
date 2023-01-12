@@ -3,7 +3,7 @@
     <div>
       <a href="{{ product.url }}">
         <div class="wishlist__product-img">
-          <img src="{{ product.featured_image | product_img_url: 'grande' }}" alt="{{ product.title }}" width="" height="">
+          <img src="{{ product.featured_image | product_img_url: 'grande' }}" alt="{{ product.title }}" width="" height="" loading="lazy">
         </div>
       </a>
     </div>
@@ -19,7 +19,9 @@
         {% endif %}
       </div>
       <div>
+ 
         <a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" class="button ">Add To Cart</a>
+     
       </div>
     </div>
   </div>  
