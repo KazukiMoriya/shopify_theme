@@ -242,6 +242,12 @@
     </script>
     <script src="{{ '_jquery-3.6.1.min.js' | asset_url }}" defer></script>
     <script src="{{ '_index.js' | asset_url }}" defer></script>
+    <script src="{{ '_wishlist.js' | asset_url }}" defer></script>
+    <script>
+      (function() {
+        Wishlist.init();
+      }());
+    </script>
     {%- if template == 'index' -%}
       <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
       <script>
@@ -318,11 +324,5 @@
     {%- endif -%}
   
 {% include 'swymSnippet' %}
-<script src="{{ '_wishlist.js' | asset_url }}" defer></script>
-<script>
-  (function() {
-    Wishlist.init();
-  }());
-</script>
 </body>
 </html>
