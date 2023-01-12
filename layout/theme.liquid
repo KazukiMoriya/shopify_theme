@@ -318,6 +318,11 @@
     {%- endif -%}
   
 {% include 'swymSnippet' %}
-
+<script src="{{ '_wishlist.js' | asset_url }}" defer></script>
+<script>
+  (function() {
+    Wishlist.init();
+  }());
+</script>
 </body>
 </html>

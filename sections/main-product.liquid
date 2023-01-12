@@ -627,6 +627,8 @@
                   </li>
                 {%- endunless -%}
               </ul>
+              {%- when 'wishlist' -%}
+                {% render 'wishlist-button' %}
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -1129,6 +1131,11 @@
           "content": "t:sections.main-product.blocks.rating.settings.paragraph.content"
         }
       ]
+    },
+    {
+      "type": "wishlist",
+      "name": "wishlist",
+      "limit": 1
     },
     {
       "type": "complementary",
