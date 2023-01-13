@@ -150,8 +150,11 @@
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               {{ card_product.title | escape }}
+
             </a>
           </h3>
+
+          {% render 'wishlist-button' %}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -313,7 +316,6 @@
           {%- endif -%}
         </div>
       </div>
-      {% render 'wishlist-button' %}
     </div>
   </div>
 {%- else -%}
