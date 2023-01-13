@@ -264,6 +264,7 @@
         });
       </script>
     {%- endif -%}
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
   </head>
 
   <body class="gradient">
@@ -324,5 +325,12 @@
     {%- endif -%}
   
 {% include 'swymSnippet' %}
+<!-- Footer Scripts ================================ -->
+{{ 'Wishlist.js' | asset_url | script_tag }}
+<script>
+  (function() {
+    Wishlist.init();
+  }());
+</script>
 </body>
 </html>

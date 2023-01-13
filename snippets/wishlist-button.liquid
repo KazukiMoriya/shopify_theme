@@ -54,7 +54,7 @@
 </style>
 
 <div class="icon__heart">
-<a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
+<a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}" onclick="ga('send', 'event', 'Wish Icon Click', '{{ product.type }}', '{{ product.title }}');">
   <div class="heart"></div>
 </a>
 </div>
