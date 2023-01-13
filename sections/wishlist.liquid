@@ -11,14 +11,16 @@
         {% endfor %}
       {% endpaginate %}
       <!-- ここまで wishlist-product-list.liquid -->
-      {% if collection.products.size > 1 %}
+
       <div class="wishlist-grid--empty-list">
         <div class="empty-list--info">
           <p class="empty-list--text black center">{{ section.settings.text }}</p>
           <a class="btn empty-list--btn center" href="/collections/all">{{ section.settings.shopping }}</a>
         </div>
       </div>
-    {% endif %}
+
+      {{ collections | json }}
+
     </div>
   </div>
 </div>
