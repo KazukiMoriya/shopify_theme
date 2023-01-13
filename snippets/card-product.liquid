@@ -99,7 +99,6 @@
           </div>
         {%- endif -%}
         <div class="card__content">
-          {% render 'wishlist-button' %}
           <div class="card__information">
             <h3
               class="card__heading"
@@ -116,6 +115,7 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            {% render 'wishlist-button' %}
           </div>
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
