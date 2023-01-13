@@ -78,16 +78,12 @@
               show_rating: section.settings.show_rating,
               lazy_load: true,
               show_quick_add: section.settings.enable_quick_add,
-              section_id: section.id
+              section_id: section.id,
+              product_handle: product.handle
             %}
             <div class="collection__option">
               <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
               <div class="collection__buttonWrap"><button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button></div>
-              <div class="icon__heart"></div>
-                <a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
-                  <div class="heart"></div>
-                </a>
-              </div>
               <style>
                 .icon__heart {
                   position: absolute;
@@ -96,7 +92,7 @@
                   z-index: 3;
                 }
                 
-              a.action--wishlist.tile-actions--btn.flex.wishlist-btn {
+               a.action--wishlist.tile-actions--btn.flex.wishlist-btn {
                 height: 38px;
                   width: 38px;
                   background: #f1f1f1;
@@ -116,33 +112,41 @@
                   background: #e63c3c ;
                 }
                 
-                .heart {
-                  position: absolute;
-                  width: 25px;
-                  height: 25px;
-                  top: 10px;
-                  left: 6px;
-                  display: block !important;
-                }
-                .heart:before,
-                .heart:after {
-                  position: absolute;
-                    content: "";
-                    left: 13px;
-                    top: 0;
-                    width: 13px;
-                    height: 20px;
-                    background: #fff;
-                    border-radius: 50px 50px 0 0;
-                    transform: rotate(-45deg);
-                    transform-origin: 0 100%;
-                }
-                .heart:after {
-                  left: 0;
-                  transform: rotate(45deg);
-                  transform-origin :100% 100%;
-                }
+              .heart {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                top: 10px;
+                left: 6px;
+              
+                display: block !important;
+              }
+              .heart:before,
+              .heart:after {
+                position: absolute;
+                  content: "";
+                  left: 13px;
+                  top: 0;
+                  width: 13px;
+                  height: 20px;
+                  background: #fff;
+                  border-radius: 50px 50px 0 0;
+                  transform: rotate(-45deg);
+                  transform-origin: 0 100%;
+              }
+              .heart:after {
+                left: 0;
+                transform: rotate(45deg);
+                transform-origin :100% 100%;
+              }
+                
               </style>
+              
+              <div class="icon__heart">
+              <a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
+                <div class="heart"></div>
+              </a>
+              </div>
             </div>
           </li>
           {%- endfor -%}
