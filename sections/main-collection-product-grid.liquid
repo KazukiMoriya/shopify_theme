@@ -67,7 +67,7 @@
       </aside>
       <!-- メモ： <div class="collection"> を外すと検索機能しなくなる -->
       <div class="collection collection__listWrap">
-        <ul class="collection__list" id="product-grid" data-id="{{ section.id }}" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+        <ul class="collection__list" id="product-grid" data-id="{{ section.id }}" data-product-id="{{ product.id }}" data-product-handle="{{ section.handle }}">
           {%- for product in collection.products -%}
           <li class="collection__item --all js-rank-grid">
             {% render 'card-product',
