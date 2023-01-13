@@ -114,6 +114,7 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            {% render 'wishlist-button' %}
           </div>
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
@@ -152,6 +153,7 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          {% render 'wishlist-button' %}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
