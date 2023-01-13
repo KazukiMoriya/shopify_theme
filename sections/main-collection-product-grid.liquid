@@ -92,8 +92,8 @@
                   z-index: 3;
                 }
                 
-               a.action--wishlist.tile-actions--btn.flex.wishlist-btn {
-                height: 38px;
+                a.action--wishlist.tile-actions--btn.flex.wishlist-btn {
+                  height: 38px;
                   width: 38px;
                   background: #f1f1f1;
                   padding: 1rem;
@@ -112,18 +112,17 @@
                   background: #e63c3c ;
                 }
                 
-              .heart {
-                position: absolute;
-                width: 25px;
-                height: 25px;
-                top: 10px;
-                left: 6px;
-              
-                display: block !important;
-              }
-              .heart:before,
-              .heart:after {
-                position: absolute;
+                .heart {
+                  position: absolute;
+                  width: 25px;
+                  height: 25px;
+                  top: 10px;
+                  left: 6px;
+                  display: block !important;
+                }
+                .heart:before,
+                .heart:after {
+                  position: absolute;
                   content: "";
                   left: 13px;
                   top: 0;
@@ -133,19 +132,17 @@
                   border-radius: 50px 50px 0 0;
                   transform: rotate(-45deg);
                   transform-origin: 0 100%;
-              }
-              .heart:after {
-                left: 0;
-                transform: rotate(45deg);
-                transform-origin :100% 100%;
-              }
-                
+                }
+                .heart:after {
+                  left: 0;
+                  transform: rotate(45deg);
+                  transform-origin :100% 100%;
+                }
               </style>
-              
               <div class="icon__heart">
-              <a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
-                <div class="heart"></div>
-              </a>
+                <a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
+                  <div class="heart"></div>
+                </a>
               </div>
             </div>
           </li>
