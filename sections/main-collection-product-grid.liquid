@@ -84,11 +84,7 @@
             <div class="collection__option">
               <div class="collection__quantityWrap"><input class="collection__quantity" id="{{ product.selected_or_first_available_variant.id }}_quantity" type="number" name="quantity" min="1" max="10" value="1" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}></div>
               <div class="collection__buttonWrap"><button class="collection__button js-reload" type="button" onclick="buttonClick({{ product.selected_or_first_available_variant.id }},$('#{{ product.selected_or_first_available_variant.id }}_quantity').val())" {% if product.selected_or_first_available_variant.available == false %} disabled {% endif %}>{% if product.selected_or_first_available_variant.available == false %} 売り切れ {% else %} カートに追加 {% endif %}</button></div>
-              <div class="icon__heart">
-                <a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
-                  <div class="heart"></div>
-                </a>
-              </div>
+              {% render 'wishlist-button' %}
             </div>
           </li>
           {%- endfor -%}
