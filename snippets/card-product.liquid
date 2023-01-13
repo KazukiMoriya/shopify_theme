@@ -98,7 +98,11 @@
           </div>
         {%- endif -%}
         <div class="card__content">
-          {% render 'wishlist-button' %}
+          <div class="icon__heart">
+            <a class="action--wishlist tile-actions--btn flex wishlist-btn" href="#" data-product-handle="{{ product.handle }}">
+              <div class="heart"></div>
+            </a>
+            </div>
           <div class="card__information">
             <h3
               class="card__heading"
