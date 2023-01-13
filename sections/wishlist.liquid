@@ -5,9 +5,11 @@
     </div>
     <div class="wishlist-grid flex">
       {% paginate collections.all.products by 9999 %}
+      <!-- ここから wishlist-product-list.liquid -->
         {% for product in collections.all.products %}
       {% include 'wishlist-product-list' %}
         {% endfor %}
+        <!-- ここまで wishlist-product-list.liquid -->
       {% endpaginate %}
       <div class="wishlist-grid--empty-list">
         <div class="empty-list--info">
