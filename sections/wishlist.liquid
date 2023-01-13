@@ -4,13 +4,13 @@
       <h1 class="center">{{ page.title }}</h1>
     </div>
     <div class="wishlist-grid flex">
-      {% paginate collections.all.products by 9999 %}
       <!-- ここから wishlist-product-list.liquid -->
+      {% paginate collections.all.products by 9999 %}
         {% for product in collections.all.products %}
       {% include 'wishlist-product-list' %}
         {% endfor %}
-        <!-- ここまで wishlist-product-list.liquid -->
       {% endpaginate %}
+      <!-- ここまで wishlist-product-list.liquid -->
       <div class="wishlist-grid--empty-list">
         <div class="empty-list--info">
           <h6 class="empty-list--text black center">{{ section.settings.text }}</h6>
