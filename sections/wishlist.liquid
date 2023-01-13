@@ -1,14 +1,12 @@
 <div class="page-width wishlist">
   <div class="wishlist-container">
-    <!-- Hero Banner -->
     <div class="wishlist-hero">
       <h1 class="center">{{ page.title }}</h1>
     </div>
-    <!-- Product Tile Grid -->
     <div class="wishlist-grid flex">
       {% paginate collections.all.products by 9999 %}
         {% for product in collections.all.products %}
-      {% include 'wishlist-product-list' %}
+      {% render 'wishlist-product-list' %}
         {% endfor %}
       {% endpaginate %}
       <div class="wishlist-grid--empty-list">
