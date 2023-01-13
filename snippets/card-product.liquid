@@ -98,6 +98,7 @@
           </div>
         {%- endif -%}
         <div class="card__content">
+          {% render 'wishlist-button' %}
           <div class="card__information">
             <h3
               class="card__heading"
@@ -330,7 +331,6 @@
       "
       style="--ratio-percent: 100%;"
     >
-      {% render 'wishlist-button' %}
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: 100%;"
