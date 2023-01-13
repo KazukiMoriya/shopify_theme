@@ -6,7 +6,7 @@
     <div class="wishlist-grid flex">
       {% paginate collections.all.products by 9999 %}
         {% for product in collections.all.products %}
-      {% render 'wishlist-product-list' %}
+      {% include 'wishlist-product-list' %}
         {% endfor %}
       {% endpaginate %}
       <div class="wishlist-grid--empty-list">
