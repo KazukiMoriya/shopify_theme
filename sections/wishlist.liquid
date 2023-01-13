@@ -13,20 +13,13 @@
       <!-- ここまで wishlist-product-list.liquid -->
       <div class="wishlist-grid--empty-list">
         <div class="empty-list--info">
-          <h6 class="empty-list--text black center">{{ section.settings.text }}</h6>
+          <p class="empty-list--text black center">{{ section.settings.text }}</p>
           <a class="btn empty-list--btn center" href="/collections/all">{{ section.settings.shopping }}</a>
         </div>
       </div>
     </div>
-    <!-- Loader -->
-    <!--
-    <div class="wishlist-loader">
-      <p class="wishlist-loader--text">Loading ...</p>
-    </div>
-    -->
   </div>
-  </div>
-  
+</div>
   
   {% schema %}
   {
@@ -37,13 +30,13 @@
         "type": "text",
         "id": "text",
         "label": "お気に入り追加していない時に表示する文言",
-      "default": "お気に入りに追加してみてね"
+        "default": "お気に入りに追加してみてね"
       },
       {
         "type": "text",
         "id": "shopping",
         "label": "商品一覧へ",
-      "default": "商品一覧へ"
+        "default": "商品一覧へ"
       }
     ]
   }

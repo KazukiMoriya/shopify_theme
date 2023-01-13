@@ -16,7 +16,7 @@
           <p class="wishlist__product-price">{{ product.price | money }}</p>
         {% endif %}
       </div>
-      <div><a href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1" class="button ">カートに追加する</a></div>
+      <div><a class="button" href="/cart/add?id={{ product.selected_or_first_available_variant.id }}&quantity=1">カートに追加する</a></div>
     </div>
   </div>  
 </div>
