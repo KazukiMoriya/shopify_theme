@@ -74,7 +74,6 @@
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
-                {% render 'wishlist-button' %}
 
               {%- if card_product.media[1] != nil and show_secondary_image -%}
                 <img
@@ -100,6 +99,7 @@
           </div>
         {%- endif -%}
         <div class="card__content">
+          {% render 'wishlist-button' %}
           <div class="card__information">
             <h3
               class="card__heading"
