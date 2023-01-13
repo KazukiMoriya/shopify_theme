@@ -11,7 +11,7 @@
         {% endfor %}
       {% endpaginate %}
       <!-- ここまで wishlist-product-list.liquid -->
-      {%- if collection.products.size == 0 -%}
+      {%- if collections.all.products == 0 -%}
       <div class="wishlist-grid--empty-list">
         <div class="empty-list--info">
           <p class="empty-list--text black center">{{ section.settings.text }}</p>
