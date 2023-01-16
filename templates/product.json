@@ -54,6 +54,11 @@
           "settings": {
           }
         },
+        "b996f571-73b6-4938-94a1-8cd4c2093536": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
@@ -107,6 +112,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "b996f571-73b6-4938-94a1-8cd4c2093536",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
