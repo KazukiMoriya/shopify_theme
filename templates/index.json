@@ -78,7 +78,7 @@
       "type": "news-list",
       "settings": {
         "title": "お知らせ一覧",
-        "news_list": "",
+        "news_list": "ニュース",
         "post_limit": 3,
         "news_list_date": true,
         "news_list_category": true
