@@ -73,10 +73,21 @@
       "settings": {
         "feature__heading": "お弁当の特徴"
       }
+    },
+    "a12f1068-6e7b-49e2-9043-615886249c4b": {
+      "type": "news-list",
+      "settings": {
+        "title": "お知らせ一覧",
+        "news_list": "",
+        "post_limit": 3,
+        "news_list_date": true,
+        "news_list_category": true
+      }
     }
   },
   "order": [
     "beb68de5-444d-4998-b070-bd3c70dfc7e2",
-    "91cb15f5-6bc9-4122-9f93-32d78728f317"
+    "91cb15f5-6bc9-4122-9f93-32d78728f317",
+    "a12f1068-6e7b-49e2-9043-615886249c4b"
   ]
 }
