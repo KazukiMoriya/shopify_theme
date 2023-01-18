@@ -7,7 +7,9 @@
 #section-news-list .container{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 55px;
+  @include pcTab{
+    padding: 55px;
+  }
   @include sp{
     padding: 35px 20px;
   }
@@ -16,9 +18,11 @@
   border: 1px solid #ccc;
 }
 #section-news-list .news-list-anchor{
-  display: flex;
-  align-items: center;
-  padding: 20px;
+  @include pcTab{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
   @include sp{
     display: block;
     padding: 15px;
