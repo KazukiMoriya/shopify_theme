@@ -16,8 +16,8 @@
     padding: 35px 20px;
   }
 }
-#section-news-list .news-list{
-  border: 1px solid #ccc;
+#section-news-list .news-list-item{
+  border-bottom: 1px solid #ccc;
 }
 #section-news-list .news-list-anchor{
   @include pcTab{
