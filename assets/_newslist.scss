@@ -29,6 +29,7 @@
     display: block;
     padding: 15px;
   }
+  @include hover1;
 }
 #section-news-list .news-list-date{
   margin-right: 15px;
