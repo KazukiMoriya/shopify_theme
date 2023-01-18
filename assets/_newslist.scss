@@ -18,18 +18,12 @@
 #section-news-list .news-list-anchor{
   display: flex;
   align-items: center;
-}
-
-#section-news-list .news-list-item>a{
-  display: flex;
-  align-items: center;
   padding: 20px;
 }
 #section-news-list .news-list-item:last-child{
   border-bottom: none;
 }
 #section-news-list .news-list-date{
-  font-size: 12px;
   margin-right: 15px;
 }
 #section-news-list .news-list-category{
