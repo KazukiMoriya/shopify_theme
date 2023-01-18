@@ -8,6 +8,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 55px;
+  @include sp{
+    padding: 35px 20px;
+  }
 }
 #section-news-list .news-list{
   border: 1px solid #ccc;
@@ -19,6 +22,10 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  @include sp{
+    display: block;
+    padding: 15px;
+  }
 }
 #section-news-list .news-list-item:last-child{
   border-bottom: none;
@@ -36,6 +43,9 @@
 #section-news-list .news-list-info{
   position: relative;
   top: -1px;
+  @include sp{
+    margin-bottom: 5px;
+  }
 }
 #section-news-list .news-list-title{
   font-size: 14px;
@@ -45,16 +55,4 @@
   overflow: hidden;
   position: relative;
   top: 1px;
-}
-@media screen and (max-width: 768px){
-  #section-news-list .container{
-    padding: 35px 20px;
-  }
-  #section-news-list .news-list-item>a{
-    display: block;
-    padding: 15px;
-  }
-  #section-news-list .news-list-info{
-    margin-bottom: 5px;
-  }
 }
