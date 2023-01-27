@@ -108,7 +108,7 @@
   &.--human{
     width: 32px;
     &:hover{
-      width: 34px;
+      transform: scale(1.1);
     }
   }
 }
