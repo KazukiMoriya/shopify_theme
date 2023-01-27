@@ -105,6 +105,9 @@
 
 .l-header-nav__icon{
   transform: translateY(-2px);
+  &.--human{
+    width: 25px;
+  }
 }
 
 .l-header__hamburger{
