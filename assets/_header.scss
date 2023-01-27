@@ -107,6 +107,9 @@
   transform: translateY(-2px);
   &.--human{
     width: 32px;
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 }
 
