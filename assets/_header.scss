@@ -73,7 +73,7 @@
     &:nth-child(n + 2){
       margin-left: 30px;
     }
-    &:last-child{
+    &:nth-child(n + 5){
       margin-left: 20px;
     }
   }
