@@ -4,3 +4,9 @@
 .recently{
   padding: 30px 0;
 }
+
+.recently__inner{
+  max-width: 1100px;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
