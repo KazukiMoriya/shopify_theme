@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 {{ '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' | script_tag }}
 {{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
@@ -11,13 +10,10 @@
       <h2 class="recently__heading">最近閲覧した商品</h2>
       <!-- メモ： id="recently-viewed-products"の中に入る -->
       <div class="recently__cardGroup" id="recently-viewed-products"></div>
-      <div class="swiper">
-        <div class="swiper-wrapper"></div>
-      </div>
       <div class="leg-room">
         {% raw %}
         <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
-          <div class="swiper-slide" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
+          <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
             <a href="${url}">
               <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
               <div>${title}</div>
@@ -32,24 +28,32 @@
     </div>
   </div>
 
-  <!-- スライダーのメインコンテナ要素（必須） -->
-  <div class="swiper">
-    <!-- スライドを囲む要素（必須） -->
-    <div class="swiper-wrapper">
-      <!-- スライド要素（必須） -->
-      <div class="swiper-slide">スライド</div>
-      <div class="swiper-slide">スライド２</div>
-      <div class="swiper-slide">スライド３</div>
-      <div class="swiper-slide">スライド４</div>
-      <div class="swiper-slide">スライド５</div>
-    </div>
-  </div>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
-  <script defer>
-    $(function(){
-      let mySwiper = new Swiper ('.swiper', {
-        // オプション設定
-        loop: true,
-      });
+  <script>
+    let mySwiper = new Swiper ('.swiper', {
+
+      // オプション設定
+      loop: true,
+    
+      // 以下のコードは省略可能
+      //ページネーション表示設定
+      pagination: {
+        el: '.swiper-pagination', //ページネーション要素
+        type: 'bullets', //ページネーションの種類
+        clickable: true, //クリックに反応させる
+      },
+    
+      //ナビゲーションボタン（矢印）表示の設定
+      navigation: {
+        nextEl: '.swiper-button-next', //「次へボタン」要素の指定
+        prevEl: '.swiper-button-prev', //「前へボタン」要素の指定
+      },
+    
+      //スクロールバー表示の設定
+      scrollbar: {
+        el: '.swiper-scrollbar', //要素の指定
+      },
+      //ここまで省略可能
     });
   </script>
