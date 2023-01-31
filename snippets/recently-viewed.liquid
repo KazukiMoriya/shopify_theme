@@ -6,55 +6,21 @@
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
       <!-- メモ： id="recently-viewed-products"の中に入る -->
-      <div class="recently__cardGroup" id="recently-viewed-products"></div>
-      <div class="leg-room">
-        {% raw %}
-        <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
-          <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
-            <a href="${url}">
-              <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
-              <div>${title}</div>
-            </a>
-          </div>
-        </script>
-        {% endraw %}
-        <script>
-        Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
-        </script>
+      <div class="recently__cardGroup" id="recently-viewed-products">
       </div>
-    </div>
   </div>
-  <!-- CSS -->
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-<!-- JavaScript -->
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
-
-<!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    ...
+  <div class="leg-room">
+    {% raw %}
+    <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
+      <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
+        <a href="${url}">
+          <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
+          <div>${title}</div>
+        </a>
+      </div>
+    </script>
+    {% endraw %}
+    <script>
+    Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
+    </script>
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
-</div>
-
-<script type="text/javascript" defer>
-  $(function(){
-    var swiper = new Swiper('.swiper',{
-      loop: true
-    });
-  });
-</script>
-
