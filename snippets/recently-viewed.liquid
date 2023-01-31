@@ -6,21 +6,21 @@
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
       <!-- メモ： id="recently-viewed-products"の中に入る -->
-      <div class="recently__cardGroup" id="recently-viewed-products">
+      <div class="recently__cardGroup" id="recently-viewed-products"></div>
+      <div class="leg-room">
+        {% raw %}
+        <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
+          <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
+            <a href="${url}">
+              <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
+              <div>${title}</div>
+            </a>
+          </div>
+        </script>
+        {% endraw %}
+        <script>
+        Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
+        </script>
       </div>
-  </div>
-  <div class="leg-room">
-    {% raw %}
-    <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
-      <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
-        <a href="${url}">
-          <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
-          <div>${title}</div>
-        </a>
-      </div>
-    </script>
-    {% endraw %}
-    <script>
-    Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
-    </script>
+    </div>
   </div>
