@@ -771,27 +771,12 @@
 <!-- JavaScript -->
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
 <script defer>
-  let swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
+  let mySwiper = new Swiper('.swiper', {
+    navigation: {  //ナビゲーションのオプション（矢印ボタンの要素を指定）
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+    }
+});
 </script>
 
 
