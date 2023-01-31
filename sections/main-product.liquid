@@ -771,11 +771,13 @@
 <!-- JavaScript -->
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
 <script defer>
-  $(function(){
+
     let mySwiper = new Swiper('.swiper', {
-      loop: true;
+      navigation: {  //ナビゲーションのオプション（矢印ボタンの要素を指定）
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
     });
-  });
 </script>
 
 
