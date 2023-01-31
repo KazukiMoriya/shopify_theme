@@ -6,46 +6,21 @@
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
       <!-- メモ： id="recently-viewed-products"の中に入る -->
-      {% comment %} <div class="recently__cardGroup" id="recently-viewed-products"></div> {% endcomment %}
-      <div class="swiper">
-        <div class="swiper-wrapper" id="recently-viewed-products"></div>
+      <div class="recently__cardGroup" id="recently-viewed-products">
       </div>
-      <div class="leg-room">
-        {% raw %}
-        <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
-          <div class="swiper-slide">
-            <a href="${url}">
-              <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
-              <div>${title}</div>
-            </a>
-          </div>
-        </script>
-        {% endraw %}
-        <script>
-        Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
-        </script>
+  </div>
+  <div class="leg-room">
+    {% raw %}
+    <script id="recently-viewed-product-template" type="text/x-jquery-tmpl">
+      <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
+        <a href="${url}">
+          <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
+          <div>${title}</div>
+        </a>
       </div>
-    </div>
+    </script>
+    {% endraw %}
+    <script>
+    Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
+    </script>
   </div>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <!-- スライダーのメインコンテナ要素（必須） -->
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">スライド１</div>
-    <div class="swiper-slide">スライド２</div>
-    <div class="swiper-slide">スライド３</div>
-  </div>
-  <div class="swiper-pagination"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-scrollbar"></div>
-</div>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
-  <script defer>
-    $(function(){
-      let mySwiper = new Swiper ('.swiper', {
-        loop: true,
-      });
-    });
-  </script>
