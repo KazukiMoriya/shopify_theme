@@ -6,7 +6,7 @@
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
       <!-- メモ： id="recently-viewed-products"の中に入る -->
-      <div class="recently__cardGroup slider" id="recently-viewed-products">
+      <div class="slider" id="recently-viewed-products">
       </div>
   </div>
   <div class="leg-room">
@@ -32,8 +32,8 @@
       $('.slider').slick();
     });
   </script>
-  <div class="slider">
+  {% comment %} <div class="slider">
     <div class="slider_item">スライド１</div>
     <div class="slider_item">スライド２</div>
     <div class="slider_item">スライド３</div>
-  </div>
+  </div> {% endcomment %}
