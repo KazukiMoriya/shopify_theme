@@ -6,7 +6,9 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script defer>
   $(function(){
-    $('.slider').slick();
+    $(window).on("load",function(){
+      $('.slider').slick();
+    });
   });
 </script>
   <div class="recently product-template__container head-room">
