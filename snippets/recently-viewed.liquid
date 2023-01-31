@@ -2,6 +2,9 @@
 {{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
 {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
+<script>
+  const showDisplay: 4;
+</script>
   <div class="recently product-template__container head-room">
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
@@ -19,7 +22,7 @@
         </script>
         {% endraw %}
         <script>
-        Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
+        Shopify.Products.showRecentlyViewed({howManyToShow: showDisplay});// 表示する商品数を変更できます。
         </script>
       </div>
     </div>
