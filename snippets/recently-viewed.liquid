@@ -8,7 +8,7 @@
       <!-- メモ： id="recently-viewed-products"の中に入る -->
       {% comment %} <div class="recently__cardGroup" id="recently-viewed-products"></div> {% endcomment %}
       <div class="swiper">
-        <div class="swiper-wrapper"></div>
+        <div class="swiper-wrapper" id="recently-viewed-products"></div>
       </div>
       <div class="leg-room">
         {% raw %}
@@ -42,7 +42,7 @@
   <div class="swiper-scrollbar"></div>
 </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
-  <script>
+  <script defer>
     $(function(){
       let mySwiper = new Swiper ('.swiper', {
         loop: true,
