@@ -2,9 +2,6 @@
 {{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
 {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
-<script>
-  const showDisplay: 4;
-</script>
   <div class="recently product-template__container head-room">
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
@@ -28,3 +25,32 @@
     </div>
   </div>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+  <script>
+    let mySwiper = new Swiper ('.swiper', {
+
+      // オプション設定
+      loop: true,
+    
+      // 以下のコードは省略可能
+      //ページネーション表示設定
+      pagination: {
+        el: '.swiper-pagination', //ページネーション要素
+        type: 'bullets', //ページネーションの種類
+        clickable: true, //クリックに反応させる
+      },
+    
+      //ナビゲーションボタン（矢印）表示の設定
+      navigation: {
+        nextEl: '.swiper-button-next', //「次へボタン」要素の指定
+        prevEl: '.swiper-button-prev', //「前へボタン」要素の指定
+      },
+    
+      //スクロールバー表示の設定
+      scrollbar: {
+        el: '.swiper-scrollbar', //要素の指定
+      },
+      //ここまで省略可能
+    });
+  </script>
