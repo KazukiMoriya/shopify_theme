@@ -3,8 +3,8 @@
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
 {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+<script defer>
   $(function(){
     $('.slider').slick();
   });
@@ -14,24 +14,6 @@
       <h2 class="recently__heading">最近閲覧した商品</h2>
       <!-- メモ： id="recently-viewed-products"の中に入る -->
       <div class="slider" id="recently-viewed-products">
-        <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
-          <a href="${url}">
-            <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
-            <div>${title}</div>
-          </a>
-        </div>
-        <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
-          <a href="${url}">
-            <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
-            <div>${title}</div>
-          </a>
-        </div>
-        <div class="recently__cardWrap" id="product-${handle}" itemscope itemtype="http://schema.org/Product">
-          <a href="${url}">
-            <div><img src="${Shopify.Products.resizeImage(featured_image, "medium")}"></div>
-            <div>${title}</div>
-          </a>
-        </div>
       </div>
   </div>
   <div class="leg-room">
@@ -51,8 +33,8 @@
   </div>
 
 
-  {% comment %} <div class="slider">
+  <div class="slider">
     <div class="slider_item">スライド１</div>
     <div class="slider_item">スライド２</div>
     <div class="slider_item">スライド３</div>
-  </div> {% endcomment %}
+  </div>
