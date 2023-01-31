@@ -1,10 +1,7 @@
-  <script src="{{ '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' }}"></script>
-  <script src="{{ 'jquery.tmpl.min.js' | asset_url }}"></script>
-  <script src="{{ 'jquery.products.min.js' | asset_url}}"></script>
-  {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
-  <script>
-  var show = 3;
-  </script>
+{{ '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' | script_tag }}
+{{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
+{{ 'jquery.products.min.js' | asset_url | script_tag }}
+{% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
   <div class="recently product-template__container head-room">
     <div class="recently__inner">
       <h2 class="recently__heading">最近閲覧した商品</h2>
@@ -22,32 +19,42 @@
         </script>
         {% endraw %}
         <script>
-          Shopify.Products.showRecentlyViewed({howManyToShow: show});// 表示する商品数を変更できます。
+        Shopify.Products.showRecentlyViewed({howManyToShow: 4});// 表示する商品数を変更できます。
         </script>
       </div>
     </div>
   </div>
+  <!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+<!-- JavaScript -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
 
-  {% comment %} <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-scrollbar"></div>
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    ...
   </div>
-  <script type="text/javascript" defer>
-    $(function(){
-      var swiper = new Swiper('.swiper',{
-        loop: true,
-        slidesPerView: show
-      });
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div>
+</div>
+
+<script type="text/javascript" defer>
+  $(function(){
+    var swiper = new Swiper('.swiper',{
+      loop: true
     });
-  </script> {% endcomment %}
+  });
+</script>
+
