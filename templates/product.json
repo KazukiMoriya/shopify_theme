@@ -201,9 +201,9 @@
           "type": "shopify:\/\/apps\/mikawaya-subscription\/blocks\/selling-plans-block\/04a0ae95-7461-4a48-956f-6840757b6670",
           "settings": {
             "use_form_id": false,
-            "form_id": "",
+            "form_id": "685408509",
             "widget_version": "V3",
-            "one_time_purchase_label": "",
+            "one_time_purchase_label": "今回のみ",
             "subscription_purchase_label": ""
           }
         }
