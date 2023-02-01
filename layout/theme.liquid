@@ -265,7 +265,7 @@
 
     {% if product.handle %}
       <link href="_swiper-bundle.min.css" rel="stylesheet">
-      <script src="{{_swiper-bundle.min.js | asset_url }}" defer></script>
+      <script src="{{'_swiper-bundle.min.js' | asset_url }}" defer></script>
       <script>
         $(function(){
           $("#recently-viewed-products").slick();
