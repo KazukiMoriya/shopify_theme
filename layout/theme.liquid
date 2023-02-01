@@ -330,5 +330,12 @@
   });
 </script>
 
+{% if template contains 'product' %}
+  {{ 'jquery.products.min.js' | asset_url | script_tag }}
+  <script>
+  Shopify.Products.recordRecentlyViewed();
+  </script>
+{% endif %}
+
 </body>
 </html>
