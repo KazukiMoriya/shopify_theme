@@ -342,8 +342,8 @@
   <link href="{{'slick.css' | asset_url }}" rel="stylesheet">
   <link href="{{'slick-theme.css' | asset_url }}" rel="stylesheet">
   <script src="{{'slick.min.js' | asset_url }}" defer></script>
-  <script>
-    $(function(){
+  <script defer>
+    $(window).on("load",function(){
       $(".js-slick").slick();
     });
   </script>
