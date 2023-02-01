@@ -193,11 +193,33 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "16752447521879fa3c": {
+      "type": "apps",
+      "blocks": {
+        "f149f3f1-f4b9-4ac7-a0dc-f79664b78658": {
+          "type": "shopify:\/\/apps\/mikawaya-subscription\/blocks\/selling-plans-block\/04a0ae95-7461-4a48-956f-6840757b6670",
+          "settings": {
+            "use_form_id": false,
+            "form_id": "",
+            "widget_version": "V3",
+            "one_time_purchase_label": "",
+            "subscription_purchase_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "f149f3f1-f4b9-4ac7-a0dc-f79664b78658"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "image-with-text",
-    "product-recommendations"
+    "product-recommendations",
+    "16752447521879fa3c"
   ]
 }
