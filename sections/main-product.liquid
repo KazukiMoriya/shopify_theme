@@ -28,16 +28,6 @@
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-  {% if product.handle %}
-    <link href="_swiper-bundle.min.css" rel="stylesheet">
-    <script src="{{_swiper-bundle.min.js | asset_url }}" defer></script>
-    <script>
-      $(function(){
-        $("#recently-viewed-products").slick();
-      });
-    </script>
-  {% endif %}
-
   {%- assign first_3d_model = product.media | where: 'media_type', 'model' | first -%}
   {%- if first_3d_model -%}
     {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
