@@ -769,6 +769,12 @@
 {% include 'recently-viewed' %}
 
 
+{% if content_for_header contains 'mikawaya' %}
+  {% render 'mikawaya-product-page-widget' %}
+  {% endif %}
+  
+
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
