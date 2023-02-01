@@ -340,12 +340,12 @@
 
 {% if product.handle %}
   <link href="_swiper-bundle.min.css" rel="stylesheet">
-  <script src="{{'_swiper-bundle.min.js' | asset_url }}" defer></script>
-  {% comment %} <script>
+  <script src="{{'slick.min.js' | asset_url }}" defer></script>
+  <script>
     $(function(){
       $(".js-slick").slick();
     });
-  </script> {% endcomment %}
+  </script>
 {% endif %}
 
 </body>
