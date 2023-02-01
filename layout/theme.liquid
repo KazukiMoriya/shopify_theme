@@ -344,7 +344,9 @@
   <script src="{{'slick.min.js' | asset_url }}" defer></script>
   <script defer>
     $(window).on("load",function(){
-      $(".js-slick").slick();
+      $(".js-slick").slick({
+        slidesToShow: 2
+      });
     });
   </script>
 {% endif %}
