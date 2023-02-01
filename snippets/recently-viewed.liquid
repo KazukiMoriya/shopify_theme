@@ -1,13 +1,6 @@
 {{ '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' | script_tag }}
 {{ 'jquery.tmpl.min.js' | asset_url | script_tag }}
 {{ 'jquery.products.min.js' | asset_url | script_tag }}
-<style>
-  .products:hover{
-    opacity: 0.8;
-  }
-</style>
-<div class="clearfix"></div>
-
   <div class="product-template__container page-width head-room">
         <aside class="grid">
           <div class="grid__item">
@@ -22,7 +15,6 @@
 {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
    <div class="grid grid--uniform grid--view-items leg-room">
       {% raw %}
-      
       <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
       <div class="grid__item small--one-half medium-up--one-quarter" itemscope itemtype="http://schema.org/Product" >
       <div id="product-${handle}" class="products"}>
@@ -40,7 +32,6 @@
       </div>
       </script>
       {% endraw %}
-
       <script>
       Shopify.Products.showRecentlyViewed( { howManyToShow:3 } );// 表示する商品数を変更できます。
       </script>
