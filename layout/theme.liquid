@@ -339,7 +339,8 @@
 {% endif %}
 
 {% if product.handle %}
-  <link href="_swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{'slick.css' | asset_url }}" rel="stylesheet">
+  <link href="{{'slick-theme.css' | asset_url }}" rel="stylesheet">
   <script src="{{'slick.min.js' | asset_url }}" defer></script>
   <script>
     $(function(){
