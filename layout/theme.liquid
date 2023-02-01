@@ -333,7 +333,7 @@
 
 {% if template contains 'product' %}
   <script src="{{ 'jquery.products.min.js' | asset_url }}" eager></script>
-  <script>
+  <script eager>
   Shopify.Products.recordRecentlyViewed();
   </script>
 {% endif %}
