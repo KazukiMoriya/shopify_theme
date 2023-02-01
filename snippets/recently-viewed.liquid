@@ -38,33 +38,35 @@
   }
 </style>
 
+  <div class="recently">
+    <div class="recently__inner">
+    
+    </div>
+  </div>
 
-
-          <h2 class="section-header__title">最近閲覧した商品</h2>
-
-
+  <h2 class="section-header__title">最近閲覧した商品</h2>
   <div id="recently-viewed-products" class="slickWrap js-slick"></div>
-{% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
+  {% assign grid_item_width = 'small--one-half medium-up--one-quarter' %}
    <div class="grid grid--uniform grid--view-items leg-room">
-      {% raw %}
-      <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
-      <div class="grid__item small--one-half medium-up--one-quarter" itemscope itemtype="http://schema.org/Product" >
-      <div id="product-${handle}" class="products"}>
-        <div class="image">
-          <a href="${url}">
-            <img src="${Shopify.Products.resizeImage(featured_image, "medium")}" width="390" height="209" loading="eager">
-          </a>
-        </div>
-        <div class="details">
-          <a href="${url}" >
-            <span class="h4 grid-view-item__title product-card__title">${title}</span>
-          </a>
-        </div>
+    {% raw %}
+    <script id="recently-viewed-product-template"  type="text/x-jquery-tmpl">
+    <div class="grid__item small--one-half medium-up--one-quarter" itemscope itemtype="http://schema.org/Product" >
+    <div id="product-${handle}" class="products"}>
+      <div class="image">
+        <a href="${url}">
+          <img src="${Shopify.Products.resizeImage(featured_image, "medium")}" width="390" height="209" loading="eager">
+        </a>
       </div>
+      <div class="details">
+        <a href="${url}" >
+          <span class="h4 grid-view-item__title product-card__title">${title}</span>
+        </a>
       </div>
-      </script>
-      {% endraw %}
-      <script>
-      Shopify.Products.showRecentlyViewed( { howManyToShow: 5 } );// 表示する商品数を変更できます。
-      </script>
+    </div>
+    </div>
+    </script>
+    {% endraw %}
+    <script>
+    Shopify.Products.showRecentlyViewed( { howManyToShow: 5 } );// 表示する商品数を変更できます。
+    </script>
   </div>
