@@ -343,10 +343,6 @@
   <link href="{{'slick-theme.css' | asset_url }}" rel="stylesheet">
   <script src="{{'slick.min.js' | asset_url }}" defer></script>
   <script defer>
-    $(window).ready(function(){
-      Shopify.Products.showRecentlyViewed( { howManyToShow: 4 } );// 表示する商品数を変更できます。
-    });
-
     $(window).on("load",function(){
       $(".js-slick").slick({
         slidesToShow: 4
