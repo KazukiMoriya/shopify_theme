@@ -263,15 +263,6 @@
     {%- endif -%}
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    {% if product.handle %}
-      <link href="_swiper-bundle.min.css" rel="stylesheet">
-      <script src="{{'_swiper-bundle.min.js' | asset_url }}" defer></script>
-      <script>
-        $(function(){
-          $(".js-slick").slick();
-        });
-      </script>
-    {% endif %}
   </head>
 
   <body class="gradient">
@@ -344,6 +335,16 @@
   {{ 'jquery.products.min.js' | asset_url | script_tag }}
   <script>
   Shopify.Products.recordRecentlyViewed();
+  </script>
+{% endif %}
+
+{% if product.handle %}
+  <link href="_swiper-bundle.min.css" rel="stylesheet">
+  <script src="{{'_swiper-bundle.min.js' | asset_url }}" defer></script>
+  <script>
+    $(function(){
+      $(".js-slick").slick();
+    });
   </script>
 {% endif %}
 
