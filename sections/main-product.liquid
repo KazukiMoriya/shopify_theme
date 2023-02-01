@@ -766,20 +766,7 @@
   </script>
 </section>
 
-{% comment %} {% include 'recently-viewed' %} {% endcomment %}
-
-{%- comment -%} 最近チェックした商品 書き込み {%- endcomment -%}
-<script type="text/javascript">
-  Shopify.Products.recordRecentlyViewed();
-  </script>
-
-  {% if template contains 'product' %}
-
-    <script>
-    Shopify.Products.recordRecentlyViewed();
-    </script>
-    
-    {% endif %}
+{% include 'recently-viewed' %}
 
 
 {% schema %}
