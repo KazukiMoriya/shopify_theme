@@ -67,7 +67,7 @@
         class="mikawaya-radio-button"
         id="one-time-purchase-option"
       >
-      通常の購入
+    <label for="one-time-purchase-option">通常の購入</label>
       &nbsp;&nbsp;&nbsp;
       {% for variant in product.variants %}
         <span 
@@ -109,10 +109,11 @@
           name="purchase_option"
           onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
           class="mikawaya-radio-button"
+          id="buy2"
           {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
           {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
           >
-        <span>{{ group.name }}&nbsp;&nbsp;&nbsp;<span name="group-inline-price" data-group-id="{{ group.id }}"></span></span>
+        <label for="buy2">{{ group.name }}&nbsp;&nbsp;&nbsp;<span name="group-inline-price" data-group-id="{{ group.id }}"></span></label>
         </div>
         <select 
           name="select-selling-plan"
