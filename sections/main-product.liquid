@@ -350,10 +350,11 @@
                       value="{{ product.selected_or_first_available_variant.id }}"
                       disabled
                     >
-<!-- 定期便 -->
-{% if content_for_header contains 'mikawaya' %}
-  {% render 'mikawaya-product-page-widget' %}
-  {% endif %}
+
+                    <!-- 定期便 -->
+                    {% if content_for_header contains 'mikawaya' %}
+                      {% render 'mikawaya-product-page-widget' %}
+                    {% endif %}
   
                     <div class="product-form__buttons">
                       <button
