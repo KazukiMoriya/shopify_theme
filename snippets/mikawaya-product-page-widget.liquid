@@ -109,11 +109,11 @@
           name="purchase_option"
           onchange="window.MIKAWAYA.handleSellingPlanGroupChange(event)"
           class="mikawaya-radio-button"
-          id="buy2"
+          id="many-time-purchase-option"
           {% if group.id == current_selling_plan_allocation.selling_plan.group_id %} checked {% endif %}
           {% if product.requires_selling_plan and current_selling_plan_allocation == nil and forloop.first %} checked {% endif %}
           >
-        <label for="buy2">{{ group.name }}&nbsp;&nbsp;&nbsp;<span name="group-inline-price" data-group-id="{{ group.id }}"></span></label>
+        <label for="many-time-purchase-option">{{ group.name }}&nbsp;&nbsp;&nbsp;<span name="group-inline-price" data-group-id="{{ group.id }}"></span></label>
         </div>
         <select 
           name="select-selling-plan"
