@@ -25,20 +25,6 @@
       }
     }
 
-    /* 定期購入 */
-    .mikawaya-selling-plan-group-container{
-      margin-bottom: 0 !important; 
-      display: block !important;
-    }
-
-    .mikawaya-selling-plan-select{
-      font-size: 14px;
-    }
-
-    .mikawaya-selling-plan-description{
-      margin-left: 0 !important;
-      font-size: 14px;
-    }
   {%- endstyle -%}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -352,6 +338,7 @@
                     <span class="product-form__error-message"></span>
                   </div>
 
+                  <label for=""></label>
                   {%- form 'product',
                     product,
                     id: product_form_id,
