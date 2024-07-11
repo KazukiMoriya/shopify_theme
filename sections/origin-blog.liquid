@@ -1,7 +1,9 @@
 
 <h1>ニュース記事一覧</h1>
 <ul>
+  {% for article in blog.articles  %}
   <li>
     <div>{{ article.title }}</div>
   </li>
+{% endfor %}
 </ul>
