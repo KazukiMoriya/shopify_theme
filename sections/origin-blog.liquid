@@ -1,5 +1,5 @@
 {%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
+  
     {% comment %} <h1 class="title--primary">{{ blog.title | escape }}</h1> {% endcomment %}
 
     {% comment %} <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
@@ -21,7 +21,7 @@
     {%- if paginate.pages > 1 -%}
       {%- render 'pagination', paginate: paginate -%}
     {%- endif -%}
-  </div>
+  
 {%- endpaginate -%}
 
 {% schema %}
