@@ -1,8 +1,8 @@
 {%- paginate blog.articles by 6 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary">{{ blog.title | escape }}</h1>
+    {% comment %} <h1 class="title--primary">{{ blog.title | escape }}</h1> {% endcomment %}
 
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    {% comment %} <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- for article in blog.articles -%}
         <div class="blog-articles__article article">
           {%- render 'article-card',
@@ -16,7 +16,7 @@
           -%}
         </div>
       {%- endfor -%}
-    </div>
+    </div> {% endcomment %}
 
     {%- if paginate.pages > 1 -%}
       {%- render 'pagination', paginate: paginate -%}
